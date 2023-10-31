@@ -1,8 +1,8 @@
 <jsp:include page="/include/header/highHeader.jsp"/>
-<title>LuxuryHotel a Hotel Template</title>
+<title>LuxurySpa a Spa Template</title>
 <jsp:include page="/include/header/lowHeader.jsp"/>
 <%
-  String h1 = "About Luxury Hotel";
+  String h1 = "About Luxury Spa";
   String p  = "Discover our world's #1 Luxury Room For VIP.";
 %>
 <%@ include file="/include/header/firstSection.jsp"%>
