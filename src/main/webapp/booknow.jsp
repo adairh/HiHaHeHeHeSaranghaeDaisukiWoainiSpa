@@ -1,113 +1,98 @@
+<%@ page import="me.sjihh.spaservice.Authentication.Customer" %>
+<%@ page import="me.sjihh.spaservice.Database.ServiceLoader" %>
+<%@ page import="java.util.List" %>
+<%@ page import="me.sjihh.spaservice.Database.ServiceLoader" %>
 <jsp:include page="/include/header/highHeader.jsp"/>
+<link rel="stylesheet" href="css/booking.css">
 <title>LuxurySpa a Spa Template</title>
 <jsp:include page="/include/header/lowHeader.jsp"/>
 
 <%
-  String h1 = "Reservation";
-  String p  = "Discover our world's #1 Luxury Room For VIP.";
+  String h1 = "Booking serviceLoaders";
+  String p  = "Booking SPA room. #1 VIP Spa serviceLoader!";
 %>
 <%@ include file="/include/header/firstSection.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+  if (session==null || session.getAttribute("user") == null) {
+%>
+<c:redirect url="sign.jsp" />
+<%
+  }
+  assert session != null;
+  Customer user = ((Customer)session.getAttribute("user"));
 
+%>
 
 
     <section class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h2 class="mb-5">Reservation Form</h2>
-                <form action="#" method="post">
-                  <div class="row">
-                      <div class="col-sm-6 form-group">
-                          
-                          <label for="">Arrival Date</label>
-                          <div style="position: relative;">
-                            <span class="fa fa-calendar icon" style="position: absolute; right: 10px; top: 10px;"></span>
-                            <input type='text' class="form-control" id='arrival_date' />
-                          </div>
-                      </div>
 
-                      <div class="col-sm-6 form-group">
-                          
-                          <label for="">Departure Date</label>
-                          <div style="position: relative;">
-                            <span class="fa fa-calendar icon" style="position: absolute; right: 10px; top: 10px;"></span>
-                            <input type='text' class="form-control" id='departure_date' />
-                          </div>
-                      </div>
-                      
-                  </div>
-
-
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <label for="room">Room</label>
-                      <select name="" id="room" class="form-control">
-                        <option value="">1 Room</option>
-                        <option value="">2 Rooms</option>
-                        <option value="">3 Rooms</option>
-                        <option value="">4 Rooms</option>
-                        <option value="">5 Rooms</option>
-                      </select>
-                    </div>
-
-                    <div class="col-md-6 form-group">
-                      <label for="room">Guests</label>
-                      <select name="" id="room" class="form-control">
-                        <option value="">1 Guest</option>
-                        <option value="">2 Guests</option>
-                        <option value="">3 Guests</option>
-                        <option value="">4 Guests</option>
-                        <option value="">5+ Guests</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 form-group">
-                      <label for="email">Email</label>
-                      <input type="email" id="email" class="form-control ">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 form-group">
-                      <label for="message">Write a Note</label>
-                      <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <input type="submit" value="Reserve Now" class="btn btn-primary">
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div class="col-md-1"></div>
-              <div class="col-md-5">
-                <h3 class="mb-5">Featured Room</h3>
-                <div class="media d-block room mb-0">
-              <figure>
-                <img src="images/img_1.jpg" alt="Generic placeholder image" class="img-fluid">
-                <div class="overlap-text">
-                  <span>
-                    Featured Room
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
-                  </span>
+        <div class="container">
+            <div class="row align-items-stretch">
+                <%
+                    int i = -1;
+                    for (ServiceLoader serviceLoader : ServiceLoader.loadServices()) {
+                        i++;
+                %>
+            <div class="col-6 product" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card">
+                    <h2 class="name"><%=serviceLoader.getService_name()%></h2>
+                    <span class="price"><%=serviceLoader.getService_price()%>,000 đ</span>
+                    <a class="popup-btn">Quick View</a>
+                    <img src="${pageContext.request.contextPath}/images/big_image_1.jpeg" class="product-img" alt="">
                 </div>
-              </figure>
-              <div class="media-body">
-                <h3 class="mt-0"><a href="#">Presidential Room</a></h3>
-                <ul class="room-specs">
-                  <li><span class="ion-ios-people-outline"></span> 2 Guests</li>
-                  <li><span class="ion-ios-crop"></span> 22 ft <sup>2</sup></li>
-                </ul>
-                <p>Nulla vel metus scelerisque ante sollicitudin. Fusce condimentum nunc ac nisi vulputate fringilla. </p>
-                <p><a href="#" class="btn btn-primary btn-sm">Book Now From $20</a></p>
-              </div>
+                <div class="popup-view">
+                    <div class="popup-card">
+                        <a><i class="fas fa-times close-btn"></i></a>
+                        <div class="product-img">
+                            <img src="${pageContext.request.contextPath}/images/big_image_1.jpeg" alt="">
+                        </div>
+                        <div class="info">
+                            <h2><%=serviceLoader.getService_name()%></h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <span class="price"><%=serviceLoader.getService_price()%></span>
+                            <a href="./booking?service=<%=i%>" class="add-cart-btn">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-              </div>
+                <%
+                    }
+                %>
+
+
+            </div>
         </div>
-      </div>
+
+
+        <%--<div class="container">
+        <div class="row">
+
+            <div class="row align-items-stretch">
+                <%
+                    int i = -1;
+                    for (Service serviceLoader : Service.loadServices()) {
+                        i++;
+                %>
+                <div class="col-6" data-aos="fade-up" data-aos-delay="100">
+                    <a target="_blank" href="./booking?serviceLoader=<%=i%>" class="d-block photo-item">
+
+                        <img src="${pageContext.request.contextPath}/images/big_image_1.jpeg" alt="Image" class="img-fluid mb-0">
+                        <div class="photo-text-more">
+                      <span class="icon icon-eye">
+                        <h3 class="card-title"><%=serviceLoader.getService_name()%></h3>
+                      </span>
+                        </div>
+                    </a>
+                </div>
+
+        </div>
+
+
+
+      </div>--%>
+
+
     </section>
     <!-- END section -->
 
@@ -128,4 +113,29 @@
     </section>
     <!-- END section -->
 <jsp:include page="/include/footer/highFooter.jsp"/>
+<script src="js/aos.js"></script>
+<script type="text/javascript">
+    var popupViews = document.querySelectorAll('.popup-view');
+    var popupBtns = document.querySelectorAll('.popup-btn');
+    var closeBtns = document.querySelectorAll('.close-btn');
+    //javascript for quick view button
+    var popup = function(popupClick) {
+        popupViews[popupClick].classList.add('active');
+    }
+    popupBtns.forEach((popupBtn, i) => {
+        popupBtn.addEventListener("click", () => {
+            popup(i);
+        });
+    });
+    //javascript for close button
+    closeBtns.forEach((closeBtn) => {
+        closeBtn.addEventListener("click", () => {
+            popupViews.forEach((popupView) => {
+                popupView.classList.remove('active');
+            });
+        });
+    });
+</script>
+
+
 <jsp:include page="/include/footer/lowFooter.jsp"/>
