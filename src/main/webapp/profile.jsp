@@ -116,29 +116,41 @@
 
 			<div>
 				<!-- reg serviceLoader -->
+
+
 				<%
+					String room = "";
 					for(BookingLoader booking : BookingLoader.getBookingsByCustomerID(user.getId())) {
-
-						for (BookingDetailLoader bookingDetail : BookingDetailLoader.getBookingDetailsByBookingID(booking.getBooking_ID())) {
-
-							%>
-
-					<%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()).getService_name()%>
-					<%=RoomLoader.loadRooms().get(bookingDetail.getRoom_ID()).getRoom_type()%>
-
-
-
-
-
-				<%
-
-						}
-
 
 						%>
 
-				<%=booking.getTotal()%>
+				<div class="row">
+					Booking: #<%=booking.getBooking_ID()%>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-4">
+						<%
+							for (BookingDetailLoader bookingDetail : BookingDetailLoader.getBookingDetailsByBookingID(booking.getBooking_ID())) {
+						%>
 
+						<tr>
+							<%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()).getService_name()%>
+							<br>
+							<% room = RoomLoader.loadRooms().get(bookingDetail.getRoom_ID()).getRoom_type(); %>
+						</tr>
+						<%
+							}
+						%>
+					</div>
+					<div class="col-4">
+						<%=room%>
+					</div>
+					<div class="col-4">
+						<%=booking.getTotal()%>
+					</div>
+
+				</div>
 				<%
 
 					}
