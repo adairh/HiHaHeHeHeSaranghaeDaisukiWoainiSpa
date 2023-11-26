@@ -62,12 +62,11 @@ public class CheckoutServlet extends HttpServlet {
     private int insertBooking(int customerId, int total) {
         int bookingId = -1;
         try (Connection connection = SQLConnection.getConnection()) {
-            String query = "INSERT INTO booking (customer_ID, booking_date, total) VALUES (?, ?, ?)";
+            String query = "INSERT INTO booking (customer_ID, total) VALUES (?, ?)";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query,
                     PreparedStatement.RETURN_GENERATED_KEYS)) {
                 preparedStatement.setInt(1, customerId);
-                preparedStatement.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
-                preparedStatement.setInt(3, total);
+                preparedStatement.setInt(2, total);
 
                 int affectedRows = preparedStatement.executeUpdate();
                 if (affectedRows > 0) {
