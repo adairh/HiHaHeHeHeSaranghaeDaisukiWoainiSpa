@@ -37,7 +37,7 @@
             <div class="col-6 product" data-aos="fade-up" data-aos-delay="100">
                 <div class="product-card">
                     <h2 class="name"><%=serviceLoader.getService_name()%></h2>
-                    <span class="price"><%=serviceLoader.getService_price()%>,000 đ</span>
+                    <span class="price"><%=serviceLoader.getService_price()%>,000 VND</span>
                     <a class="popup-btn">Quick View</a>
                     <img src="${pageContext.request.contextPath}/images/big_image_1.jpeg" class="product-img" alt="">
                 </div>
@@ -48,9 +48,9 @@
                             <img src="${pageContext.request.contextPath}/images/big_image_1.jpeg" alt="">
                         </div>
                         <div class="info">
-                            <h2><%=serviceLoader.getService_name()%></h2>
+                            <h3><%=serviceLoader.getService_name()%></h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <span class="price"><%=serviceLoader.getService_price()%></span>
+                            <span class="price"><%=serviceLoader.getService_price()%>,000 VND</span>
                             <a href="./booking?service=<%=i%>" class="add-cart-btn">Add to Cart</a>
                         </div>
                     </div>

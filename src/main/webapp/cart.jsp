@@ -3,12 +3,16 @@
 <%@ page import="java.util.List" %>
 <%@ page import="me.sjihh.spaservice.Booking.BookingDetail" %>
 <%@ page import="me.sjihh.spaservice.Database.ServiceLoader" %>
+<%@ page import="me.sjihh.spaservice.Booking.BookingHandle" %>
+<%@ page import="me.sjihh.spaservice.Database.LevelLoader" %>
+<%@ page import="me.sjihh.spaservice.Database.RoomLoader" %>
 <jsp:include page="/include/header/highHeader.jsp"/>
-<link rel="stylesheet" href="css/cart.scss">
+<link rel="stylesheet" href="scss/cart.scss">
 <title>LuxurySpa a Spa Template</title>
 <jsp:include page="/include/header/lowHeader.jsp"/>
 
 <%
+    double finalPrice = 0;
   String h1 = "Your cart";
   String p  = "Booking SPA room. #1 VIP Spa serviceLoader!";
 %>
@@ -34,176 +38,118 @@
               if (session.getAttribute("services") != null) {
           %>
 
-          <div class="row">
-              <div class="row align-items-stretch">
-
-                  <div class="wrap cf">
-                      <h1 class="projTitle">Shopping Cart</h1>
-                      <div class="heading cf">
-                          <h1>My Cart</h1>
-                          <a href="booknow.jsp" class="continue">Continue Shopping</a>
-                      </div>
-                      <div class="cart">
-
-                          <div class="basket">
-                              <div class="basket-module">
-                                  <label for="promo-code">Enter a promotional code</label>
-                                  <input id="promo-code" type="text" name="promo-code" maxlength="5" class="promo-code-field">
-                                  <button class="promo-code-cta">Apply</button>
-                              </div>
-                              <div class="basket-labels">
-                                  <ul>
-                                      <li class="item item-heading">Item</li>
-                                      <li class="price">Price</li>
-                                  </ul>
-                              </div>
-
-                          <%
-                              for (BookingDetail bookingDetail : (List<BookingDetail>)session.getAttribute("services")) {
-                          %>
-                          <div class="col-6" data-aos="fade-up" data-aos-delay="100">
-
-
-                              <li class="items odd">
-
-                                  <div class="infoWrap">
-                                      <div class="cartSection">
-                                          <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
-                                          <p class="itemNumber"><%=bookingDetail.getService_ID()%></p>
-                                          <h3><%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()).getService_name()%></h3>
-
-
-                                      </div>
-
-
-                                      <div class="prodTotal cartSection">
-                                          <p>
-                                              <%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()).getService_price()%>,000 đ
-                                          </p>
-                                      </div>
-                                      <div class="cartSection removeWrap">
-                                          <a href="#" class="remove">x</a>
-                                      </div>
-                                  </div>
-                              </li>
-
-                              <div class="basket-product">
-                                  <div class="item">
-                                      <div class="product-image">
-                                          <img src="http://placehold.it/120x166" alt="Placholder Image 2" class="product-frame">
-                                      </div>
-                                      <div class="product-details">
-                                          <h1><strong>
-                                              <%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()).getService_name()%>
-                                          </strong></h1>
-
-                                          <p>Product Code - <%=bookingDetail.getService_ID()%></p>
-                                      </div>
-                                  </div>
-                                  <div class="price">
-                                      <%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()).getService_price()%>
-                                  </div>
-                                  <div class="remove">
-                                      <button>Remove</button>
-                                  </div>
-                              </div>
-
-                          </div>
-                          <%
-                              }
-                          %>
-
-                  <!--<li class="items even">Item 2</li>-->
-
-                      </div>
-
-
-                      <aside>
-                          <div class="summary">
-                              <div class="summary-total-items"><span class="total-items"></span> Items in your Bag</div>
-                              <div class="summary-subtotal">
-                                  <div class="subtotal-title">Subtotal</div>
-                                  <div class="subtotal-value final-value" id="basket-subtotal">130.00</div>
-                                  <div class="summary-promo hide">
-                                      <div class="promo-title">Promotion</div>
-                                      <div class="promo-value final-value" id="basket-promo"></div>
-                                  </div>
-                              </div>
-                              <div class="summary-delivery">
-                                  <select name="delivery-collection" class="summary-delivery-selection">
-                                      <option value="0" selected="selected">Select Collection or Delivery</option>
-                                      <option value="collection">Collection</option>
-                                      <option value="first-class">Royal Mail 1st Class</option>
-                                      <option value="second-class">Royal Mail 2nd Class</option>
-                                      <option value="signed-for">Royal Mail Special Delivery</option>
-                                  </select>
-                              </div>
-                              <div class="summary-total">
-                                  <div class="total-title">Total</div>
-                                  <div class="total-value final-value" id="basket-total">130.00</div>
-                              </div>
-                              <div class="summary-checkout">
-                                  <button class="checkout-cta">Go to Secure Checkout</button>
-                              </div>
-                          </div>
-                      </aside>
-                  </div>
-
-              </div>
-          </div>
+          <div>
 
 
               <div class="wrap cf">
-                  <h1 class="projTitle">Responsive Table<span>-Less</span> Shopping Cart</h1>
+                  <h1 class="projTitle">Service Cart</h1>
                   <div class="heading cf">
                       <h1>My Cart</h1>
-                      <a href="#" class="continue">Continue Shopping</a>
+                      <a href="booknow.jsp" class="continue">Continue Booking</a>
                   </div>
                   <div class="cart">
 
                       <ul class="cartWrap">
+
+                          <%
+                              for (BookingDetail bookingDetail : (List<BookingDetail>)session.getAttribute("services")) {
+                          %>
+
                           <li class="items odd">
+                              <table class="cart-item">
+                                  <div class="infoWrap">
+                                      <tr>
+                                          <div class="cartSection">
+                                              <td>
+                                                  <img style="width: 150px;" src="${pageContext.request.contextPath}/images/big_image_1.jpeg" alt="" class="itemImg" />
+                                              </td>
+                                              <td>
+                                                  <p class="itemNumber">#<%=bookingDetail.getService_ID()%></p>
+                                              </td>
+                                              <td>
+                                                  <h3><%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()).getService_name()%></h3>
+                                              </td>
 
-                              <div class="infoWrap">
-                                  <div class="cartSection">
-                                      <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
-                                      <p class="itemNumber">#QUE-007544-002</p>
-                                      <h3>Item Name 1</h3>
 
-                                      <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
+                                          </div>
 
-                                      <p class="stockStatus"> In Stock</p>
+
+                                          <td>
+                                              <div class="prodTotal cartSection">
+                                                  <p> <%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()).getService_price()%>,000 VND</p>
+                                              </div>
+                                          </td>
+                                          <td>
+                                              <div class="cartSection removeWrap">
+                                                  <a href="RemoveBooking?service=<%=bookingDetail.getService_ID()%>" class="remove">x</a>
+                                              </div>
+                                          </td>
+                                      </tr>
+
                                   </div>
+                              </table>
 
-
-                                  <div class="prodTotal cartSection">
-                                      <p>$15.00</p>
-                                  </div>
-                                  <div class="cartSection removeWrap">
-                                      <a href="#" class="remove">x</a>
-                                  </div>
-                              </div>
                           </li>
 
+                          <%
+                              }
+                          %>
 
 
                           <!--<li class="items even">Item 2</li>-->
 
                       </ul>
+
+                      <label for="roomSelect">Select a Room:</label>
+                      <select id="roomSelect" onchange="updatePrice()">
+                          <option value="0">Select ROOM</option>
+                          <%
+                              for (RoomLoader roomLoader : RoomLoader.loadRooms()) {
+                          %>
+                                <option value="<%=roomLoader.getRoom_id()%>"><%=roomLoader.getRoom_type()%></option>
+                          <%
+
+                              }
+                          %>
+
+                      </select>
+
+
                   </div>
 
-                  <div class="promoCode"><label for="promo">Have A Promo Code?</label><input type="text" name="promo" placholder="Enter Code" />
-                      <a href="#" class="btn"></a></div>
+                  <div class="promoCode">
+                      <label for="promo">Have A Promo Code?</label><input type="text" name="promo" placholder="Enter Code" />
+                      <a href="#" class="btnn"></a></div>
 
                   <div class="subtotal cf">
                       <ul>
-                          <li class="totalRow"><span class="label">Subtotal</span><span class="value">$35.00</span></li>
+                          <li class="totalRow"><span class="label">Subtotal</span><span class="value">
+                              <%=BookingHandle.getTotalPrice((List<BookingDetail>)session.getAttribute("services"))%> VND
+                          </span></li>
 
-                          <li class="totalRow"><span class="label">Shipping</span><span class="value">$5.00</span></li>
+                          <li class="totalRow"><span class="label">Room</span><span class="value">
+                              <p><span id="priceDisplay">0</span></p>
+                          </span></li>
 
-                          <li class="totalRow"><span class="label">Tax</span><span class="value">$4.00</span></li>
-                          <li class="totalRow final"><span class="label">Total</span><span class="value">$44.00</span></li>
-                          <li class="totalRow"><a href="#" class="btn continue">Checkout</a></li>
+                          <li class="totalRow"><span class="label">Member Discount</span><span class="value">
+                              <%=LevelLoader.getLevelByID(user.getLevel_id()).getSale_percent()%>
+                          </span></li>
+                          <li class="totalRow"><span class="label">Voucher Discount</span><span class="value">
+                              <%=LevelLoader.getLevelByID(user.getLevel_id()).getSale_percent()%>
+                          </span></li>
+                          <li class="totalRow final"><span class="label">Total</span><span class="value">
+                              <%
+                                finalPrice =
+                                        BookingHandle.getTotalPrice((List<BookingDetail>)session.getAttribute("services"))
+                              *
+                                        (100-LevelLoader.getLevelByID(user.getLevel_id()).getSale_percent())
+                              /100;
+                              %>
+                              <p><span id="finalPrice"><%=finalPrice%></span></p>
+
+
+                          </span></li>
+                          <li class="totalRow"><a href="checkout" class="btnn continue">Checkout</a></li>
                       </ul>
                   </div>
               </div>
@@ -239,4 +185,33 @@
     <!-- END section -->
 <jsp:include page="/include/footer/highFooter.jsp"/>
 <script src="js/aos.js"></script>
+<script>
+    function updatePrice() {
+        var roomId = document.getElementById("roomSelect").value;
+
+        // Make an AJAX request to the server to get the price based on the selected room ID
+        // This is where you'd use JSP or Java to interact with your backend and retrieve the price
+
+        // For now, let's assume you have a JavaScript function getPriceFromServer(roomId)
+        // that makes an AJAX request to the server and returns the price
+
+        getPriceFromServer(roomId).then(price => {
+            document.getElementById("priceDisplay").textContent = price;
+            document.getElementById("finalPrice").textContent = price + <%=finalPrice%>;
+        });
+    }
+
+    // Simulating an AJAX request with a Promise
+    function getPriceFromServer(roomId) {
+        return new Promise((resolve) => {
+            // Assuming you have a JSP endpoint that returns the price for the given room ID
+            // This is where you'd interact with your JSP or Java backend
+            // Replace this with the actual endpoint in your application
+            fetch('<%= request.getContextPath() %>/getPrice?roomId='+roomId)
+                .then(response => response.json())
+                .then(data => resolve(data.price))
+                .catch(error => console.error('Error:', error));
+        });
+    }
+</script>
 <jsp:include page="/include/footer/lowFooter.jsp"/>
