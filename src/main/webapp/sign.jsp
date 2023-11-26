@@ -4,30 +4,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>LuxuryHotel a Hotel Template</title>
+    <title>LuxurySpa a Spa Template</title>
     <link rel="stylesheet" href="css/login.css">
   </head>
   <body>
             <div class="container right-panel-active">
               <!-- Sign Up -->
               <div class="container__form container--signup">
-                <form action="#" class="form" id="form1">
+                <form method="POST" action="register" class="form" id="form1">
                   <h2 class="form__title">Sign Up</h2>
-                  <input type="text" placeholder="User" class="input" />
-                  <input type="email" placeholder="Email" class="input" />
-                  <input type="password" placeholder="Password" class="input" />
-                  <button class="btn">Sign Up</button>
+                  <label for="reg-user"></label><input type="text" name="reg-user" id="reg-user" placeholder="User" class="input" required>
+                  <label for="reg-email"></label><input type="email" name="reg-email" id="reg-email" placeholder="Email" class="input" required>
+                  <label for="reg-password"></label><input type="password" name="reg-password" id="reg-password" placeholder="Password" class="input" required>
+                  <button href="#" type="submit" class="btn" value="submit">Sign Up</button>
                 </form>
               </div>
 
               <!-- Sign In -->
               <div class="container__form container--signin">
-                <form action="#" class="form" id="form2">
+                <form method="POST" action="login" class="form" id="form2">
                   <h2 class="form__title">Sign In</h2>
-                  <input type="email" placeholder="Email" class="input" />
-                  <input type="password" placeholder="Password" class="input" />
+                  <label for="log-email"></label><input type="email" name="log-email" id="log-email" placeholder="Email" class="input" required>
+                  <label for="log-password"></label><input type="password" name="log-password" id="log-password" placeholder="Password" class="input" required>
                   <a href="#" class="link">Forgot your password?</a>
-                  <button class="btn">Sign In</button>
+                  <button href="#" type="submit" class="btn" value="submit">Sign In</button>
                 </form>
               </div>
 

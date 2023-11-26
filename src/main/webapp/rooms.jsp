@@ -1,5 +1,5 @@
 <jsp:include page="/include/header/highHeader.jsp"/>
-<title>LuxuryHotel a Hotel Template</title>
+<title>LuxurySpa a Spa Template</title>
 <jsp:include page="/include/header/lowHeader.jsp"/>
 <%
   String h1 = "Our Rooms";
@@ -15,7 +15,7 @@
                 <img src="images/img_2.jpg" alt="Generic placeholder image" class="img-fluid">
                 <div class="overlap-text">
                   <span>
-                    Featured Room 
+                    Featured Room
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
@@ -39,7 +39,7 @@
                 <img src="images/img_3.jpg" alt="Generic placeholder image" class="img-fluid">
                 <div class="overlap-text">
                   <span>
-                    Featured Room 
+                    Featured Room
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
@@ -63,7 +63,7 @@
                 <img src="images/img_1.jpg" alt="Generic placeholder image" class="img-fluid">
                 <div class="overlap-text">
                   <span>
-                    Featured Room 
+                    Featured Room
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
@@ -89,7 +89,7 @@
                 <img src="images/img_2.jpg" alt="Generic placeholder image" class="img-fluid">
                 <div class="overlap-text">
                   <span>
-                    Featured Room 
+                    Featured Room
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
@@ -113,7 +113,7 @@
                 <img src="images/img_3.jpg" alt="Generic placeholder image" class="img-fluid">
                 <div class="overlap-text">
                   <span>
-                    Featured Room 
+                    Featured Room
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
@@ -137,7 +137,7 @@
                 <img src="images/img_1.jpg" alt="Generic placeholder image" class="img-fluid">
                 <div class="overlap-text">
                   <span>
-                    Featured Room 
+                    Featured Room
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
@@ -163,7 +163,7 @@
                 <img src="images/img_2.jpg" alt="Generic placeholder image" class="img-fluid">
                 <div class="overlap-text">
                   <span>
-                    Featured Room 
+                    Featured Room
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
@@ -187,7 +187,7 @@
                 <img src="images/img_3.jpg" alt="Generic placeholder image" class="img-fluid">
                 <div class="overlap-text">
                   <span>
-                    Featured Room 
+                    Featured Room
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
@@ -211,7 +211,7 @@
                 <img src="images/img_1.jpg" alt="Generic placeholder image" class="img-fluid">
                 <div class="overlap-text">
                   <span>
-                    Featured Room 
+                    Featured Room
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>

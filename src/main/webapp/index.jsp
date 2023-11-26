@@ -1,9 +1,9 @@
 <jsp:include page="/include/header/highHeader.jsp"/>
-    <title>LuxuryHotel a Hotel Template</title>
+    <title>LuxurySpa a Spa Template</title>
 <jsp:include page="/include/header/lowHeader.jsp"/>
 
 <%
-  String h1 = "Welcome To Our Luxury Rooms";
+  String h1 = "Welcome To Our Luxury Spa";
   String p  = "Discover our world's #1 Luxury Room For VIP.<p><a href=\"booknow.jsp\" class=\"btn btn-primary\">Book Now</a></p>";
 %>
 <%@ include file="/include/header/firstSection.jsp"%>
@@ -32,8 +32,8 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-12 heading-wrap text-center">
-            <h4 class="sub-heading">Our Luxury Rooms</h4>
-              <h2 class="heading">Featured Rooms</h2>
+            <h4 class="sub-heading">Our Luxury Services</h4>
+              <h2 class="heading">Featured Services</h2>
           </div>
         </div>
         <div class="row ">
@@ -43,7 +43,7 @@
                 <img src="images/img_1.jpg" alt="Generic placeholder image" class="img-fluid">
                 <div class="overlap-text">
                   <span>
-                    Featured Room 
+                    Featured Service
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
@@ -51,7 +51,7 @@
                 </div>
               </figure>
               <div class="media-body">
-                <h3 class="mt-0"><a href="#">Presidential Room</a></h3>
+                <h3 class="mt-0"><a href="#">Presidential Service</a></h3>
                 <ul class="room-specs">
                   <li><span class="ion-ios-people-outline"></span> 2 Guests</li>
                   <li><span class="ion-ios-crop"></span> 22 ft <sup>2</sup></li>
@@ -66,7 +66,7 @@
               <!-- <figure> -->
                 <div class="overlap-text">
                   <span>
-                    Hotel Room 
+                    Spa Service
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
@@ -82,7 +82,7 @@
               <!-- <figure> -->
                 <div class="overlap-text">
                   <span>
-                    Hotel Room 
+                    Spa Service
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
