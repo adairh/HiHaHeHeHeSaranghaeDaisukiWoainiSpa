@@ -9,20 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20ad8bfc-e052-4c50-a05d-1928ac9be830" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Booking/BookingHandle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/LevelLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/CheckoutServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/PriceServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/RemoveBooking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Booking/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Booking/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Booking/BookingDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Booking/BookingDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/StaffLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/StaffLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/booknow.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/booknow.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scss/cart.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/include/header/lowHeader.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/header/lowHeader.jsp" afterDir="false" />
+    <list default="true" id="20ad8bfc-e052-4c50-a05d-1928ac9be830" name="Changes" comment="account and booking">
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/CheckoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/CheckoutServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +218,7 @@
       <workItem from="1700721161039" duration="4747000" />
       <workItem from="1700801029207" duration="6712000" />
       <workItem from="1700894036099" duration="6832000" />
-      <workItem from="1700931134122" duration="26595000" />
+      <workItem from="1700931134122" duration="26927000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1697970364252</created>
@@ -260,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700981352004</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="account and booking">
+      <created>1701013704091</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701013704091</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,6 +265,7 @@
     <MESSAGE value="init" />
     <MESSAGE value="setupJava" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="account and booking" />
+    <option name="LAST_COMMIT_MESSAGE" value="account and booking" />
   </component>
 </project>
