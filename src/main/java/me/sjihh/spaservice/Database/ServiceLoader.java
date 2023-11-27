@@ -49,6 +49,8 @@ public class ServiceLoader {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
         return serviceLoaders;

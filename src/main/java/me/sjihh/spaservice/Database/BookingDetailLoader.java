@@ -54,6 +54,8 @@ public class BookingDetailLoader {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
         return bookingDetailLoader;
@@ -84,6 +86,8 @@ public class BookingDetailLoader {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
         return bookingDetailLoaders;
@@ -115,6 +119,8 @@ public class BookingDetailLoader {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
         return bookingDetailLoaders;

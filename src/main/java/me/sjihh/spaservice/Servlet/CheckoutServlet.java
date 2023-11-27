@@ -81,6 +81,8 @@ public class CheckoutServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
             // Handle the exception as needed
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
         return bookingId;
     }
@@ -119,6 +121,8 @@ public class CheckoutServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
             // Handle the exception as needed
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 }

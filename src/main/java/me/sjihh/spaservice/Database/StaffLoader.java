@@ -37,6 +37,8 @@ public class StaffLoader {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
         return staffLoaders;
@@ -56,6 +58,8 @@ public class StaffLoader {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
         return null; // Return null if no staff is found

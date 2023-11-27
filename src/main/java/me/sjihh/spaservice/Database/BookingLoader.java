@@ -39,6 +39,8 @@ public class BookingLoader {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
         return bookingLoader;
@@ -63,6 +65,8 @@ public class BookingLoader {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
         return bookingLoaders;
@@ -89,6 +93,8 @@ public class BookingLoader {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
         return bookingLoaders;

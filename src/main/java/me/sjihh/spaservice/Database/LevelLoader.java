@@ -37,6 +37,8 @@ public class LevelLoader {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
         return levelLoaders;
@@ -58,7 +60,7 @@ public class LevelLoader {
                     }
                 }
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 

@@ -42,6 +42,8 @@ public class SaleOffLoader {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
         return saleOffLoaders;
