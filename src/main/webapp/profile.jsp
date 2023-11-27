@@ -105,7 +105,7 @@
 							<hr>
 							<div class="row">
 								<div class="col-sm-12">
-									<a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+									<a class="btn btn-info " target="__blank" href="logout">Log out</a>
 								</div>
 							</div>
 						</div>
@@ -114,7 +114,7 @@
 			</div>
 
 
-			<div>
+			<div class="booking-panel">
 				<!-- reg serviceLoader -->
 
 
@@ -133,7 +133,6 @@
 						<%
 							for (BookingDetailLoader bookingDetail : BookingDetailLoader.getBookingDetailsByBookingID(booking.getBooking_ID())) {
 						%>
-
 						<tr>
 							<%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()).getService_name()%>
 							<br>
@@ -147,12 +146,13 @@
 						<%=room%>
 					</div>
 					<div class="col-4">
-						<%=booking.getTotal()%>
+						<%=booking.getTotal()*1000%> VND
 					</div>
 
 				</div>
-				<%
 
+				<br>
+				<%
 					}
 				%>
 			</div>

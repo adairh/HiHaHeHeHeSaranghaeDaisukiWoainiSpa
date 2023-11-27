@@ -45,3 +45,8 @@
 .shadow-none {
     box-shadow: none!important;
 }
+
+.booking-panel {
+    background-color: #282626;
+    padding: 50px;
+}

@@ -37,6 +37,8 @@ public class RoomLoader {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
         return roomLoaders;
