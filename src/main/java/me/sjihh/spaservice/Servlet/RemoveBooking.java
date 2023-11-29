@@ -41,7 +41,7 @@ public class RemoveBooking extends HttpServlet {
 
             session.setAttribute("services", bookings);
             getServletContext()
-                    .getRequestDispatcher("/cart.jsp")
+                    .getRequestDispatcher("/cart.jsp#cart")
                     .forward(request, response);
 
         }
