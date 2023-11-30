@@ -53,6 +53,6 @@ public class RoomLoader {
     }
 
     public int getRoom_price() {
-        return room_price;
+        return room_price*1000;
     }
 }

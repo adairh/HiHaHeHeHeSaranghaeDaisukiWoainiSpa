@@ -10,16 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20ad8bfc-e052-4c50-a05d-1928ac9be830" name="Changes" comment="more refactor">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/PromoCodeServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/UpdatePriceServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/PreviewLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/PreviewLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/SaleOffLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/SaleOffLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/RoomLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/RoomLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/CheckoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/CheckoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/PriceServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/PromoCodeServlet.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/RemoveBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/RemoveBooking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/booknow.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/booknow.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/UpdatePriceServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/UpdatePriceServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/rooms.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/rooms.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/include/header/lowHeader.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/header/lowHeader.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/scss/cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scss/cart.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +42,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="lowServlet" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -234,6 +234,8 @@
       <workItem from="1701052029985" duration="8343000" />
       <workItem from="1701141848564" duration="4598000" />
       <workItem from="1701221660191" duration="15441000" />
+      <workItem from="1701249372095" duration="5145000" />
+      <workItem from="1701312561002" duration="16979000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1697970364252</created>

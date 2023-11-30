@@ -23,7 +23,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="index.jsp">Home</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <%--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="rooms.jsp" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
                             <a class="dropdown-item" href="rooms.jsp">Classic Service</a>
@@ -32,6 +32,9 @@
                             <a class="dropdown-item" href="rooms.jsp">Deluxe Service</a>
                         </div>
 
+                    </li>--%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rooms.jsp">Classic Service</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.jsp">About</a>
