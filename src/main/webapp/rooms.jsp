@@ -6,21 +6,43 @@
 <div class="pop-up" id="review-<%=service.getService_ID()%>">
 
   <span onclick="hidePopup(<%=service.getService_ID()%>)" class="close">X</span>
+  <div class="container-fluid text-center previews">
+
+    <h2>REVIEW</h2>
+    <!-- -->
+    <%
+      for (PreviewLoader pl : PreviewLoader.getPreviewsByServiceID(service.getService_ID())) {
+    %>
+    <div class="row">
+      <div class="col-4">
+      </div>
+      <div class="col-4">
+        <div class="new-message-box">
+          <div class="new-message-box-info">
+            <div class="commenter">
+              <%=Customer.getUserById(pl.getCustomer_ID()).getUsername()%>
+            </div>
+            <div class="tip-box-info">
+              <p><%=pl.getComment()%></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+      </div>
+    </div>
 
 
-  detail
-  asdasdasd
+    <br>
+    <%
+      }
+    %>
+    <p><a href="${pageContext.request.contextPath}/booknow.jsp" class="btn btn-primary btn-sm">Book now!</a></p>
 
-  <h2>REVIEW</h2>
+    <!-- -->
 
-  <%
-    for (PreviewLoader pl : PreviewLoader.getPreviewsByServiceID(service.getService_ID())) {
-  %>
-    <%=pl.getComment()%>
-  <br>
-  <%
-    }
-  %>
+  </div>
+
 
 </div>
 <%
@@ -29,12 +51,14 @@
 
 <%@ page import="me.sjihh.spaservice.Database.ServiceLoader" %>
 <%@ page import="me.sjihh.spaservice.Database.PreviewLoader" %>
+<%@ page import="me.sjihh.spaservice.Authentication.Customer" %>
 <jsp:include page="/include/header/highHeader.jsp"/>
+<link rel="stylesheet" href="scss/comment.scss">
 <title>LuxurySpa a Spa Template</title>
 <jsp:include page="/include/header/lowHeader.jsp"/>
 <%
-  String h1 = "Our Rooms";
-  String p  = "Discover our world's #1 Luxury Room For VIP.";
+  String h1 = "Our Services";
+  String p  = "Discover our world's #1 Luxury Services.";
 %>
 <%@ include file="/include/header/firstSection.jsp"%>
 
@@ -51,14 +75,14 @@
             <div class="media d-block room mb-0">
               <figure>
                 <img src="images/img_3.jpg" alt="Generic placeholder image" class="img-fluid">
-                <div class="overlap-text">
+                <%--<div class="overlap-text">
                   <span>
-                    Featured Room
+                    Featured Ser
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                   </span>
-                </div>
+                </div>--%>
               </figure>
               <div class="media-body">
                 <h4 class="mt-0"><a href="#"><%=service.getService_name()%></a></h4>
@@ -66,7 +90,10 @@
                   <li><span class="ion-ios-clock"></span> <%=service.getService_time()%> Minutes</li>
                   <li><span class="ion-ios-hashtag"></span> Service ID: #<%=service.getService_ID()%> </li>
                 </ul>
-                <p>Nulla vel metus scelerisque ante sollicitudin. Fusce condimentum nunc ac nisi vulputate fringilla. </p>
+                <div style="overflow-y: scroll" class="service-detail">
+                  <p><%=service.getService_detail()%></p>
+                </div>
+                <br>
                 <p><button onclick="showPopup(<%=service.getService_ID()%>)" class="btn btn-primary btn-sm">Click to view review</button></p>
               </div>
             </div>
@@ -125,39 +152,6 @@
   }
 
 </script>
-<style>
-  /* Style for the overlay */
-  .overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-  }
-
-  /* Style for the popup */
-  .pop-up {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50%;
-    background-color: #fff; /* White background */
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
-    z-index: 2;
-    overflow-y: scroll;
-  }
-
-</style>
 <jsp:include page="/include/footer/lowFooter.jsp"/>
 
 

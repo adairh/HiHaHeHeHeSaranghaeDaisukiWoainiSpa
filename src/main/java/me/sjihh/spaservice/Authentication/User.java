@@ -1,5 +1,12 @@
 package me.sjihh.spaservice.Authentication;
 
+import me.sjihh.spaservice.Database.SQLConnection;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public abstract class User{
     int id;
     String username;
@@ -62,4 +69,10 @@ public abstract class User{
     public void setUsername(String username) {
         this.username = username;
     }
+
+
+
+
+
+
 }

@@ -17,7 +17,7 @@
 
 <%
   String h1 = "Your cart";
-  String p  = "Booking SPA room. #1 VIP Spa serviceLoader!";
+  String p  = "Booking SPA room. #1 VIP Spa service!";
 %>
 <%@ include file="/include/header/firstSection.jsp"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -78,12 +78,12 @@
                                   </div>
 
                                   <div class="col-3">
-                                      <h3><%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()).getService_name()%></h3>
+                                      <h3><%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()-1).getService_name()%></h3>
                                   </div>
 
                                   <div class="col-3">
                                       <div class="prodTotal cartSection">
-                                          <p> <%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()).getService_price()%>,000 VND</p>
+                                          <p> <%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()-1).getService_price()%>,000 VND</p>
                                       </div>
                                   </div>
 
@@ -216,7 +216,7 @@
                                   <%
                                       session.setAttribute("servicePrice",
                                               BookingHandle.getTotalPrice((List<BookingDetail>)session.getAttribute("services")));
-                                      double price = (double) session.getAttribute("finalPrice");
+                                      int price = (int) session.getAttribute("finalPrice");
                                       if (session.getAttribute("finalPrice") == null) {
                                           price = 0;
                                       }

@@ -1,9 +1,13 @@
+<%@ page import="me.sjihh.spaservice.Database.StaffLoader" %>
+<%@ page import="me.sjihh.spaservice.Database.ServiceLoader" %>
 <jsp:include page="/include/header/highHeader.jsp"/>
+
 <title>LuxurySpa a Spa Template</title>
 <jsp:include page="/include/header/lowHeader.jsp"/>
+<link rel="stylesheet" href="css/about.css">
 <%
   String h1 = "About Luxury Spa";
-  String p  = "Discover our world's #1 Luxury Room For VIP.";
+  String p  = "Discover our world's #1 Luxury Service.";
 %>
 <%@ include file="/include/header/firstSection.jsp"%>
 
@@ -17,12 +21,9 @@
             <div class="heading-wrap  element-animate">
               <h4 class="sub-heading">Stay with our luxury rooms</h4>
               <h2 class="heading">Our Story</h2>
-              <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus illo similique natus, a recusandae? Dolorum, unde a quibusdam est? Corporis deleniti obcaecati quibusdam inventore fuga eveniet! Qui delectus tempore amet!</p>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus illo similique natus, a recusandae? Dolorum, unde a quibusdam est? Corporis deleniti obcaecati quibusdam inventore fuga eveniet! Qui delectus tempore amet!</p>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus illo similique natus, a recusandae? Dolorum, unde a quibusdam est? Corporis deleniti obcaecati quibusdam inventore fuga eveniet! Qui delectus tempore amet!</p>
-
+              <p class="">
+                In the heart of tranquility, Luxury Spa was born out of a vision to redefine wellness and elevate the spa experience. Established in 2003 by visionary wellness enthusiasts, the company aimed to create a sanctuary where individuals could escape the stresses of modern life and embrace the art of self-care.
+              </p>
             </div>
           </div>
           <div class="col-md-1"></div>
@@ -35,54 +36,27 @@
     <!-- END section -->
 
 
-   
-   
-    
-    <section class="site-section">
+
+    <section class="site-section game-section">
       <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-12 heading-wrap text-center">
-            <h4 class="sub-heading">Our Kind Staff</h4>
-              <h2 class="heading">Our Staff</h2>
-          </div>
-        </div>
-        <div class="row ">
-          <div class="col-md-4">
-            <div class="post-entry">
-              <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid">
-              <div class="body-text">
-                <div class="category">Staff</div>
-                <h3 class="mb-3"><a href="#">Michelle Aguilar</a></h3>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum deserunt illo quis similique dolore voluptatem culpa voluptas rerum, dolor totam.</p>
-                <p><a href="#" class="btn btn-primary btn-outline-primary btn-sm">Read Bio</a></p>
-              </div>
+        <h2 class="heading">Our Staff</h2>
+        <div class="owl-carousel custom-carousel owl-theme">
+          <%
+          for (StaffLoader staffLoader : StaffLoader.loadStaffs()) {
+            %>
+          <div class="item <%=staffLoader.getStaff_ID()==1?"active" : ""%>" style="background-image: url(images/person_1.jpg);">
+            <div class="item-desc">
+              <h3 class="mb-3"><a href="#"><%=staffLoader.getStaff_name()%></a></h3>
+              <p class="mb-4">Experience staff of our Spa, and the major is doing <%=ServiceLoader.loadServices().get(staffLoader.getService_ID()-1).getService_name()%>!</p>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="post-entry">
-              <img src="images/person_2.jpg" alt="Image placeholder" class="img-fluid">
-              <div class="body-text">
-                <div class="category">Staff</div>
-                <h3 class="mb-3"><a href="#">Chris Standworth</a></h3>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum deserunt illo quis similique dolore voluptatem culpa voluptas rerum, dolor totam.</p>
-                <p><a href="#" class="btn btn-primary btn-outline-primary btn-sm">Read Bio</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="post-entry">
-              <img src="images/person_3.jpg" alt="Image placeholder" class="img-fluid">
-              <div class="body-text">
-                <div class="category">Cook</div>
-                <h3 class="mb-3"><a href="#">Rob McDonald</a></h3>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum deserunt illo quis similique dolore voluptatem culpa voluptas rerum, dolor totam.</p>
-                <p><a href="#" class="btn btn-primary btn-outline-primary btn-sm">Read Bio</a></p>
-              </div>
-            </div>
-          </div>
+            <%
+          }
+          %>
         </div>
       </div>
     </section>
+
     <!-- END section -->
 
     <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/img_5.jpg);">
@@ -98,4 +72,17 @@
     </section>
     <!-- END section -->
 <jsp:include page="/include/footer/highFooter.jsp"/>
+<script>
+  $(".custom-carousel").owlCarousel({
+    autoWidth: true,
+    loop: true
+  });
+  $(document).ready(function () {
+    $(".custom-carousel .item").click(function () {
+      $(".custom-carousel .item").not($(this)).removeClass("active");
+      $(this).toggleClass("active");
+    });
+  });
+
+</script>
 <jsp:include page="/include/footer/lowFooter.jsp"/>

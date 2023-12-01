@@ -3,6 +3,7 @@ package me.sjihh.spaservice.Servlet;
 import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
@@ -13,10 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import me.sjihh.spaservice.Authentication.Customer;
+import me.sjihh.spaservice.Booking.Booking;
 import me.sjihh.spaservice.Database.SQLConnection;
 import me.sjihh.spaservice.Booking.BookingDetail;
 import me.sjihh.spaservice.Database.ServiceLoader;
 import me.sjihh.spaservice.Database.StaffLoader;
+import me.sjihh.spaservice.Email.EmailSender;
 
 @WebServlet("/checkout")
 public class CheckoutServlet extends HttpServlet {
@@ -33,8 +36,9 @@ public class CheckoutServlet extends HttpServlet {
         List<BookingDetail> bookingDetails = (List<BookingDetail>) request.getSession().getAttribute("services");
 
         int customerId = ((Customer)request.getSession().getAttribute("user")).getId();
-        LocalDateTime date = (LocalDateTime) request.getSession().getAttribute("time");
-        int total = calculateTotal(bookingDetails); // Implement this method as needed
+        String dt = (String) request.getSession().getAttribute("time");
+        LocalDateTime date = LocalDateTime.parse(dt, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+        int total = (int) request.getSession().getAttribute("finalPrice"); // Implement this method as needed
 
         // Insert a new booking into the booking table
         int bookingId = insertBooking(customerId, date, total);
@@ -44,20 +48,13 @@ public class CheckoutServlet extends HttpServlet {
                 customerId,
                 (Integer)request.getSession().getAttribute("room"));
 
+        EmailSender.sendBookingConfirmationEmail(((Customer) request.getSession().getAttribute("user")).getEmail(), Booking.getBookingByID(bookingId), bookingDetails);
+
         // Redirect to a success page or handle the response as needed
         response.sendRedirect("profile.jsp");
     }
 
     // Helper method to calculate the total based on the list of booking details
-    private int calculateTotal(List<BookingDetail> bookingDetails) {
-        // Implement this method based on your business logic
-        // For example, summing up the prices of all services
-        int total = 0;
-        for (BookingDetail bookingDetail : bookingDetails) {
-            total += ServiceLoader.loadServices().get(bookingDetail.getService_ID()).getService_price(); // Replace with the actual method to get the price
-        }
-        return total;
-    }
 
     // Helper method to insert a new booking into the booking table
     private int insertBooking(int customerId, LocalDateTime date, int total) {
@@ -105,7 +102,7 @@ public class CheckoutServlet extends HttpServlet {
                     preparedStatement.setTimestamp(5, Timestamp.valueOf(dt));
                     preparedStatement.setInt(6, StaffLoader.getStaffByServiceId(bookingDetail.getService_ID()).getStaff_ID());
                     preparedStatement.setInt(7, bookingDetail.getSaleOff_ID());
-                    dt = dt.plus(ServiceLoader.loadServices().get(bookingDetail.getService_ID()).getService_time(), ChronoUnit.MINUTES);
+                    dt = dt.plus(ServiceLoader.loadServices().get(bookingDetail.getService_ID()-1).getService_time(), ChronoUnit.MINUTES);
                     preparedStatement.setTimestamp(8, Timestamp.valueOf(dt));
 
                     preparedStatement.addBatch(); // Add the batch for execution

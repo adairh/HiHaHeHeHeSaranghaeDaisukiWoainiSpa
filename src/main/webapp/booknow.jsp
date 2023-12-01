@@ -9,7 +9,7 @@
 
 <%
   String h1 = "Booking serviceLoaders";
-  String p  = "Booking SPA room. #1 VIP Spa serviceLoader!";
+  String p  = "Booking SPA room. #1 VIP Spa service!";
 %>
 <%@ include file="/include/header/firstSection.jsp"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="info">
                             <h3><%=serviceLoader.getService_name()%></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p><%=serviceLoader.getService_detail()%></p>
                             <span class="price"><%=serviceLoader.getService_price()%>,000 VND</span>
                             <a href="./booking?service=<%=i%>" class="add-cart-btn">Add to Cart</a>
                         </div>

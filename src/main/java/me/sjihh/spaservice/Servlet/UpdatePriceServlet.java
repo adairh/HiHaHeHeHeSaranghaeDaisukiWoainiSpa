@@ -81,8 +81,9 @@ public class UpdatePriceServlet extends HttpServlet {
 
         }
 
+        int tt = (int)total;
 
-        request.getSession().setAttribute("finalPrice", total);
+        request.getSession().setAttribute("finalPrice", tt);
 
         getServletContext()
                 .getRequestDispatcher("/cart.jsp")

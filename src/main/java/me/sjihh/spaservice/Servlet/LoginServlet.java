@@ -1,5 +1,6 @@
 package me.sjihh.spaservice.Servlet;
 
+import me.sjihh.spaservice.Authentication.Admin;
 import me.sjihh.spaservice.Authentication.AuthenticateHandler;
 import me.sjihh.spaservice.Authentication.User;
 
@@ -23,9 +24,14 @@ public class LoginServlet extends HttpServlet {
 
         User authenticatedUser = new AuthenticateHandler().login(email, password);
 
+        if (authenticatedUser instanceof Admin) {
+            request.getSession().setAttribute("admin", true);
+        }
+
         if (authenticatedUser != null) {
             request.getSession().setAttribute("user", authenticatedUser);
-            response.sendRedirect("profile.jsp");
+            if (!(authenticatedUser instanceof Admin)) response.sendRedirect("profile.jsp");
+            else response.sendRedirect("admin/index.jsp");
         } else {
             request.setAttribute("errorMessage", "Authentication failed. Please try again.");
             request.getRequestDispatcher("sign.jsp").forward(request, response);

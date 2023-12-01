@@ -1,0 +1,78 @@
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Style for the popup */
+.pop-up {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  background-color: #2f2618;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  z-index: 100;
+  overflow-y: scroll;
+}
+
+.tip-box-info p {
+  color: #b78f18;
+}
+
+.commenter{
+  font-size: larger;
+  color: #8a6a04;
+  font-weight: bolder;
+}
+
+.pop-up .row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* For Webkit browsers (e.g., Chrome, Safari) */
+.service-detail::-webkit-scrollbar {
+  width: 4px; /* Set the width of the scrollbar */
+}
+
+.service-detail::-webkit-scrollbar-thumb {
+  background-color: #808080; /* Set the color of the scrollbar thumb */
+  border-radius: 2px; /* Add some border-radius for rounded corners */
+}
+
+.service-detail::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Set the color of the scrollbar track */
+  border-radius: 2px; /* Add the same border-radius as the thumb */
+}
+
+/* For Firefox */
+/* Note: Firefox uses a different pseudo-element for scrollbar styling */
+/* These styles will be applied to the scrollbar in Firefox */
+.service-detail {
+  scrollbar-color: #808080 #f1f1f1; /* Set thumb and track color */
+  scrollbar-width: thin; /* Set the width of the scrollbar */
+}
+
+/* For Microsoft Edge and Internet Explorer */
+/* Note: Edge and IE use a different pseudo-element for scrollbar styling */
+/* These styles will be applied to the scrollbar in Edge and IE */
+.service-detail {
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* Hide scrollbar when not in use */
+}
+
+.service-detail {
+  height: 150px;
+}

@@ -26,7 +26,7 @@
                   <h2 class="form__title">Sign In</h2>
                   <label for="log-email"></label><input type="email" name="log-email" id="log-email" placeholder="Email" class="input" required>
                   <label for="log-password"></label><input type="password" name="log-password" id="log-password" placeholder="Password" class="input" required>
-                  <a href="#" class="link">Forgot your password?</a>
+                  <a href="forget-pass.jsp" class="link">Forgot your password?</a>
                   <button href="#" type="submit" class="btn" value="submit">Sign In</button>
                 </form>
               </div>

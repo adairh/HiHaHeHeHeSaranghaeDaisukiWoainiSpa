@@ -34,13 +34,10 @@
 
                     </li>--%>
                     <li class="nav-item">
-                        <a class="nav-link" href="rooms.jsp">Classic Service</a>
+                        <a class="nav-link" href="rooms.jsp">Service</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.jsp">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.jsp">Contact</a>
                     </li>
                     <%
                         if (session==null || session.getAttribute("user") == null) {

@@ -9,8 +9,8 @@ public class SQLConnection {
     private static final String host = "localhost";
     private static final String port = "3306";
     private static final String database = "it_project";
-    private static final String username = "admin";
-    private static final String password = "admin";
+    private static final String username = "root";
+    private static final String password = "";
     public static Connection getConnection() throws ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conn = null;

@@ -75,4 +75,8 @@ public class ServiceLoader {
     public String getService_name() {
         return service_name;
     }
+
+    public String getService_detail() {
+        return service_detail;
+    }
 }

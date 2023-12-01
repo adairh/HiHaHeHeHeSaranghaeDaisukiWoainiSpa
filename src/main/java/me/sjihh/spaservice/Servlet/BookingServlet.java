@@ -20,7 +20,7 @@ public class BookingServlet extends HttpServlet {
 
         String name = request.getParameter("service");
         int serviceID = Integer.parseInt(name);
-        ServiceLoader s = ServiceLoader.loadServices().get(serviceID);
+        ServiceLoader s = ServiceLoader.loadServices().get(serviceID-1);
 
         List<BookingDetail> bookings;
 
@@ -88,7 +88,7 @@ public class BookingServlet extends HttpServlet {
 
         String name = request.getParameter("service");
         int serviceID = Integer.parseInt(name);
-        ServiceLoader s = ServiceLoader.loadServices().get(serviceID);
+        ServiceLoader s = ServiceLoader.loadServices().get(serviceID-1);
 
         List<BookingDetail> bookings = (List<BookingDetail>) request.getSession().getAttribute("services");
 
