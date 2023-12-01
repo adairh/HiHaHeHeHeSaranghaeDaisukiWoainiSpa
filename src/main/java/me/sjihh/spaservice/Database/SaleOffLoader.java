@@ -12,13 +12,15 @@ public class SaleOffLoader {
     private java.sql.Timestamp saleOff_start;
     private java.sql.Timestamp saleOff_finish;
     private int saleOff_percent;
+    private String saleOff_code; // new property
 
     public SaleOffLoader(int saleOff_ID, java.sql.Timestamp saleOff_start,
-                         java.sql.Timestamp saleOff_finish, int saleOff_percent) {
+                         java.sql.Timestamp saleOff_finish, int saleOff_percent, String saleOff_code) {
         this.saleOff_ID = saleOff_ID;
         this.saleOff_start = saleOff_start;
         this.saleOff_finish = saleOff_finish;
         this.saleOff_percent = saleOff_percent;
+        this.saleOff_code = saleOff_code;
     }
 
     public static List<SaleOffLoader> loadSaleOffs() {
@@ -34,9 +36,10 @@ public class SaleOffLoader {
                     java.sql.Timestamp saleOff_start = resultSet.getTimestamp("saleOff_start");
                     java.sql.Timestamp saleOff_finish = resultSet.getTimestamp("saleOff_finish");
                     int saleOff_percent = resultSet.getInt("saleOff_percent");
+                    String saleOff_code = resultSet.getString("saleOff_code"); // new column
 
                     SaleOffLoader saleOffLoader = new SaleOffLoader(saleOff_ID, saleOff_start,
-                            saleOff_finish, saleOff_percent);
+                            saleOff_finish, saleOff_percent, saleOff_code);
                     saleOffLoaders.add(saleOffLoader);
                 }
             }
@@ -47,6 +50,10 @@ public class SaleOffLoader {
         }
 
         return saleOffLoaders;
+    }
+
+    public String getSaleOff_code() {
+        return saleOff_code;
     }
 
     public int getSaleOff_ID() {

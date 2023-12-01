@@ -33,10 +33,11 @@ public class CheckoutServlet extends HttpServlet {
         List<BookingDetail> bookingDetails = (List<BookingDetail>) request.getSession().getAttribute("services");
 
         int customerId = ((Customer)request.getSession().getAttribute("user")).getId();
+        LocalDateTime date = (LocalDateTime) request.getSession().getAttribute("time");
         int total = calculateTotal(bookingDetails); // Implement this method as needed
 
         // Insert a new booking into the booking table
-        int bookingId = insertBooking(customerId, total);
+        int bookingId = insertBooking(customerId, date, total);
 
         // Insert booking details into the booking_detail table
         insertBookingDetails(bookingDetails, bookingId,
@@ -59,14 +60,15 @@ public class CheckoutServlet extends HttpServlet {
     }
 
     // Helper method to insert a new booking into the booking table
-    private int insertBooking(int customerId, int total) {
+    private int insertBooking(int customerId, LocalDateTime date, int total) {
         int bookingId = -1;
         try (Connection connection = SQLConnection.getConnection()) {
-            String query = "INSERT INTO booking (customer_ID, total) VALUES (?, ?)";
+            String query = "INSERT INTO booking (customer_ID, booking_date, total) VALUES (?, ?, ?)";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query,
                     PreparedStatement.RETURN_GENERATED_KEYS)) {
                 preparedStatement.setInt(1, customerId);
-                preparedStatement.setInt(2, total);
+                preparedStatement.setTimestamp(2, Timestamp.valueOf(date));
+                preparedStatement.setInt(3, total);
 
                 int affectedRows = preparedStatement.executeUpdate();
                 if (affectedRows > 0) {
@@ -95,6 +97,7 @@ public class CheckoutServlet extends HttpServlet {
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                 LocalDateTime dt = LocalDateTime.now();
                 for (BookingDetail bookingDetail : bookingDetails) {
+                    System.out.println("BOOKING: " + bookingDetail.getService_ID());
                     preparedStatement.setInt(1, bookingId);
                     preparedStatement.setInt(2, cus);
                     preparedStatement.setInt(3, bookingDetail.getService_ID());
@@ -111,7 +114,6 @@ public class CheckoutServlet extends HttpServlet {
                 // Execute the batch
                 int[] affectedRows = preparedStatement.executeBatch();
 
-                // Handle the result of batch execution as needed
                 for (int rows : affectedRows) {
                     if (rows <= 0) {
                         // Handle the failed insertions
@@ -126,3 +128,5 @@ public class CheckoutServlet extends HttpServlet {
         }
     }
 }
+
+// Handle the result of batch execution as needed

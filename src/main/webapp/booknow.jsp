@@ -30,7 +30,7 @@
         <div class="container">
             <div class="row align-items-stretch">
                 <%
-                    int i = -1;
+                    int i = 0;
                     for (ServiceLoader serviceLoader : ServiceLoader.loadServices()) {
                         i++;
                 %>

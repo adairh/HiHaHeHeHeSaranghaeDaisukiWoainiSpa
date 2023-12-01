@@ -1,6 +1,7 @@
 package me.sjihh.spaservice.Servlet;
 
 import me.sjihh.spaservice.Booking.BookingDetail;
+import me.sjihh.spaservice.Booking.BookingHandle;
 import me.sjihh.spaservice.Database.ServiceLoader;
 
 import javax.servlet.*;
@@ -39,9 +40,16 @@ public class RemoveBooking extends HttpServlet {
                 }
             }
 
-            session.setAttribute("services", bookings);
+            if (bookings.size() == 0) {
+                session.setAttribute("services", null);
+            } else {
+                session.setAttribute("services", bookings);
+                session.setAttribute("servicePrice",
+                        BookingHandle.getTotalPrice((List<BookingDetail>)session.getAttribute("services")));
+            }
+
             getServletContext()
-                    .getRequestDispatcher("/cart.jsp")
+                    .getRequestDispatcher("/UpdatePrice")
                     .forward(request, response);
 
         }
