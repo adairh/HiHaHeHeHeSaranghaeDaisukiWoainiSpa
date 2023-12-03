@@ -187,38 +187,95 @@
                             </div>
                         </div>
 
+                        <!-- Popup panel -->
+                        <div id="addSaleOffPanel" style="display:none;">
+                            <h3>Add New SaleOff</h3>
+
+                            <div class="card">
+                                <div class="card-body card-block">
+                                    <form>
+                                        <label>Start Date:</label>
+                                        <input class="form-control" type="datetime-local" id="saleOffStartDate">
+
+                                        <label>End Date:</label>
+                                        <input class="form-control" type="datetime-local" id="saleOffEndDate">
+
+                                        <label>Discount Percent:</label>
+                                        <input class="form-control" type="number" id="discountPercent">
+
+                                        <label>Code:</label>
+                                        <input class="form-control" type="text" id="discountCode">
+
+                                        <br>
+
+                                        <button class="btn" type="button" onclick="addSaleOff()">Save</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hidden edit popup -->
+                        <div id="editPopup" style="display:none;">
+                            <h3>Edit Saleoff</h3>
+                            <div class="card">
+                                <div class="card-body card-block">
+                                    <form>
+                                        <input type="hidden" id="editId">
+                                        <label>Start Date:</label>
+                                        <input type="datetime-local" id="editStart">
+                                        <label>Finish Date:</label>
+                                        <input type="datetime-local" id="editFinish">
+                                        <label>Percent:</label>
+                                        <input id="editPercent">
+                                        <label>Code:</label>
+                                        <input id="editCode">
+                                        <!-- other fields -->
+                                    </form>
+                                    <button onclick="saveEdit()">Save</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h2 class="title-1 m-b-25">SaleOff</h2>
+                            </div>
+                            <div class="col-lg-6">
+                                <button class="btn" id="addSaleOffBtn">Add New SaleOff</button>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <h2 class="title-1 m-b-25">Booking Details</h2>
                                 <div class="table-responsive table--no-card m-b-40">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                         <tr>
-                                            <th>Booking ID</th>
-                                            <th>Customer ID</th>
-                                            <th>Booking Date</th>
-                                            <th>Total</th>
-                                            <th>Service Name</th>
-                                            <th>Room Type</th>
+                                            <th>SaleOff ID</th>
+                                            <th>Discount Percentage</th>
+                                            <th>Discount Code</th>
+                                            <th>Start</th>
+                                            <th>End</th>
+                                            <th>Modify</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <%
-                                            List<Booking> bookings = Booking.loadBookings();
-                                            for (Booking booking : bookings) {
-                                                List<BookingDetailLoader> bookingDetails = BookingDetailLoader.getBookingDetailsByBookingID(booking.getBooking_ID());
-                                                for (BookingDetailLoader bookingDetail : bookingDetails) {
+                                            List<SaleOffLoader> saleOffs = SaleOffLoader.loadSaleOffs();
+                                            for (SaleOffLoader saleOff : saleOffs) {
                                         %>
                                         <tr>
-                                            <td><%= booking.getBooking_ID() %></td>
-                                            <td><%= Customer.getUserById(booking.getCustomer_ID()).getUsername() %></td>
-                                            <td><%= booking.getBooking_date() %></td>
-                                            <td><%= booking.getTotal()*1000 %></td>
-                                            <td><%= ServiceLoader.loadServices().get(bookingDetail.getService_ID()-1).getService_name() %></td>
-                                            <td><%= RoomLoader.loadRooms().get(bookingDetail.getRoom_ID()-1).getRoom_type() %></td>
+                                            <td><%= saleOff.getSaleOff_ID() %></td>
+                                            <td><%= saleOff.getSaleOff_percent() %></td>
+                                            <td><%= saleOff.getSaleOff_code() %></td>
+                                            <td><%= saleOff.getSaleOff_start() %></td>
+                                            <td><%= saleOff.getSaleOff_finish() %></td>
+                                            <td>
+                                                <button onclick="showEditPopup(<%= saleOff.getSaleOff_ID() %>)">Edit</button>
+                                                |||
+                                                <button onclick="deleteSaleoff(<%= saleOff.getSaleOff_ID() %>)">Delete</button>
+                                            </td>
                                         </tr>
                                         <%
-                                                }
                                             }
                                         %>
                                         </tbody>
@@ -258,6 +315,115 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+    <script>
+        function addSaleOff() {
+
+            // Get input values
+            let start = document.getElementById("saleOffStartDate").value;
+            let end = document.getElementById("saleOffEndDate").value;
+            let percent = document.getElementById("discountPercent").value;
+            let code = document.getElementById("discountCode").value;
+
+            fetch("/AddSaleOff?start=" + start + "&end=" + end + "&percent=" + percent + "&code=" + code);
+
+            // Reload page
+            window.location.reload();
+        }
+
+        let addSaleOffBtn = document.getElementById("addSaleOffBtn");
+        let panel = document.getElementById("addSaleOffPanel");
+
+        addSaleOffBtn.onclick = function() {
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            }
+            else {
+                panel.style.display = "block";
+            }
+        }
+
+        // Global variables
+        let selectedSaleoff;
+
+        function showEditPopup(saleoffId) {
+
+            // Get saleoff data from API
+            fetch("/getSaleoff?id=" + saleoffId)
+                .then(res => res.json())
+                .then(saleoff => {
+                    selectedSaleoff = saleoff;
+
+                    // Populate values
+                    document.getElementById("editId").value = selectedSaleoff.id;
+                    document.getElementById("editStart").value = selectedSaleoff.start;
+                    document.getElementById("editEnd").value = selectedSaleoff.end;
+                    document.getElementById("editPercent").value = selectedSaleoff.percent;
+                    document.getElementById("editCode").value = selectedSaleoff.code;
+
+                    // Show popup
+                    document.getElementById("editPopup").style.display = "block";
+
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+
+        }
+
+        function saveEdit() {
+
+            // Get updated value
+            let updatedSaleoff = {
+                id: document.getElementById("editId").value,
+                start: document.getElementById("editStart").value,
+                end: document.getElementById("editEnd").value,
+                percent: document.getElementById("editPercent").value,
+                code: document.getElementById("editCode").value
+            };
+
+            // Validate input
+
+            // Call API to update
+            fetch("/EditSaleOff", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(updatedSaleoff)
+            })
+                .then(res => {
+                    // Close popup
+                    document.getElementById("editPopup").style.display = "none";
+
+                    // Reload page
+                    window.location.reload();
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+
+        }
+
+        function deleteSaleoff(saleoffId) {
+
+            if (confirm("Are you sure?")) {
+
+                fetch("/DeleteSaleOff?id=" + saleoffId, {
+                    method: "DELETE"
+                })
+                    .then(res => {
+                        window.location.reload();
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    })
+
+            }
+
+        }
+
+
+    </script>
 
 </body>
 

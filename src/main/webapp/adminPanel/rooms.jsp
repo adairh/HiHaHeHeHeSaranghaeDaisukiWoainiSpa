@@ -187,43 +187,36 @@
                             </div>
                         </div>
 
+
                         <div class="row">
                             <div class="col-lg-12">
-                                <h2 class="title-1 m-b-25">Booking Details</h2>
+                                <h2 class="title-1 m-b-25">Rooms</h2>
                                 <div class="table-responsive table--no-card m-b-40">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                         <tr>
-                                            <th>Booking ID</th>
-                                            <th>Customer ID</th>
-                                            <th>Booking Date</th>
-                                            <th>Total</th>
-                                            <th>Service Name</th>
+                                            <th>Room ID</th>
                                             <th>Room Type</th>
+                                            <th>Room Price</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <%
-                                            List<Booking> bookings = Booking.loadBookings();
-                                            for (Booking booking : bookings) {
-                                                List<BookingDetailLoader> bookingDetails = BookingDetailLoader.getBookingDetailsByBookingID(booking.getBooking_ID());
-                                                for (BookingDetailLoader bookingDetail : bookingDetails) {
+                                            List<RoomLoader> rooms = RoomLoader.loadRooms();
+                                            for (RoomLoader room : rooms) {
                                         %>
                                         <tr>
-                                            <td><%= booking.getBooking_ID() %></td>
-                                            <td><%= Customer.getUserById(booking.getCustomer_ID()).getUsername() %></td>
-                                            <td><%= booking.getBooking_date() %></td>
-                                            <td><%= booking.getTotal()*1000 %></td>
-                                            <td><%= ServiceLoader.loadServices().get(bookingDetail.getService_ID()-1).getService_name() %></td>
-                                            <td><%= RoomLoader.loadRooms().get(bookingDetail.getRoom_ID()-1).getRoom_type() %></td>
+                                            <td><%= room.getRoom_id() %></td>
+                                            <td><%= room.getRoom_type() %></td>
+                                            <td><%= room.getRoom_price() %></td>
                                         </tr>
                                         <%
-                                                }
                                             }
                                         %>
                                         </tbody>
                                     </table>
                                 </div>
+
                             </div>
                         </div>
                     </div>

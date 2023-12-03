@@ -9,356 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20ad8bfc-e052-4c50-a05d-1928ac9be830" name="Changes" comment="maven fix">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Email/EmailSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/Admin/AdminServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/ChangePasswordServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/ForgetPasswordServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/ForgotPasswordServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/UpdateProfileServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/css/bootstrap-datetimepicker.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/css/font-face.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/css/theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fontawesome.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-100.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-100.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-100.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-100.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-100.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-100italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-100italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-100italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-100italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-100italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-200.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-200.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-200.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-200.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-200.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-200italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-200italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-200italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-200italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-200italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-300.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-300.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-300.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-300.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-300.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-300italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-300italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-300italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-300italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-300italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-500.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-500.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-500.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-500.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-500.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-500italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-500italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-500italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-500italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-500italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-600.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-600.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-600.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-600.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-600.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-600italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-600italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-600italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-600italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-600italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-700.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-700.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-700.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-700.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-700.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-700italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-700italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-700italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-700italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-700italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-800.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-800.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-800.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-800.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-800.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-800italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-800italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-800italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-800italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-800italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-900italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-900italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-900italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-900italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-900italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/fonts/poppins/poppins-v5-latin-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/images/bg-title-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/images/bg-title-02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/images/icon/Untitled-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/images/icon/avatar-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/images/icon/avatar-02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/images/icon/avatar-03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/images/icon/avatar-04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/images/icon/avatar-05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/images/icon/avatar-06.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/images/icon/avatar-big-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/images/icon/logo-blue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/images/icon/logo-mini.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/images/icon/logo-white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/images/icon/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/js/bootstrap-datetimepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/js/moment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/media/9606031aabebde32fa96edeff071a132.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/animsition/animsition.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/animsition/animsition.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/bootstrap-4.1/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/bootstrap-4.1/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/bootstrap-4.1/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/chartjs/Chart.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/circle-progress/circle-progress.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/circle-progress/circle-progress.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/countdown/countdowntime.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/countdown/jquery.countdown.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/countdown/moment-timezone-with-data.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/countdown/moment-timezone.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/countdown/moment.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/counter-up/jquery.counterup.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/counter-up/jquery.waypoints.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/counter-up/waypoints.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/css-hamburgers/hamburgers.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/css-hamburgers/hamburgers.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-4.7/HELP-US-OUT.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-4.7/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-4.7/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-4.7/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-4.7/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-4.7/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-4.7/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-4.7/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-4.7/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-5/css/fontawesome-all.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-5/webfonts/fa-brands-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-5/webfonts/fa-brands-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-5/webfonts/fa-brands-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-5/webfonts/fa-brands-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-5/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-5/webfonts/fa-regular-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-5/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-5/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-5/webfonts/fa-regular-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-5/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-5/webfonts/fa-solid-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-5/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-5/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-5/webfonts/fa-solid-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/font-awesome-5/webfonts/fa-solid-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/CHANGELOG.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/CONTRIBUTING.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/fullcalendar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/fullcalendar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/fullcalendar.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/fullcalendar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/fullcalendar.print.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/fullcalendar.print.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/gcal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/gcal.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/lib/moment.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale-all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/af.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/ar-dz.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/ar-kw.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/ar-ly.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/ar-ma.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/ar-sa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/ar-tn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/ar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/be.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/bg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/bs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/cs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/da.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/de-at.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/de-ch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/de.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/el.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/en-au.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/en-ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/en-gb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/en-ie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/en-nz.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/es-do.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/es-us.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/es.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/et.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/eu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/fa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/fi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/fr-ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/fr-ch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/fr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/gl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/he.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/hi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/hr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/hu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/id.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/is.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/it.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/ja.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/ka.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/kk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/ko.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/lb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/lt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/lv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/mk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/ms-my.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/ms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/nb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/nl-be.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/nl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/nn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/pl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/pt-br.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/pt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/ro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/ru.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/sk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/sl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/sq.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/sr-cyrl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/sr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/sv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/th.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/tr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/uk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/vi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/zh-cn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/zh-hk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/fullcalendar-3.10.0/locale/zh-tw.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/jquery-3.2.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/jquery-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/dist/css/lightbox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/dist/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/dist/images/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/dist/images/next.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/dist/images/prev.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/dist/js/lightbox-plus-jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/dist/js/lightbox-plus-jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/dist/js/lightbox-plus-jquery.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/dist/js/lightbox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/dist/js/lightbox.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/dist/js/lightbox.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/src/css/lightbox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/src/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/src/images/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/src/images/next.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/src/images/prev.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/lightbox2/src/js/lightbox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/mdi-font/css/material-design-iconic-font.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/mdi-font/css/material-design-iconic-font.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/mdi-font/fonts/Material-Design-Iconic-Font.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/mdi-font/fonts/Material-Design-Iconic-Font.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/mdi-font/fonts/Material-Design-Iconic-Font.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/mdi-font/fonts/Material-Design-Iconic-Font.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/mdi-font/fonts/Material-Design-Iconic-Font.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/perfect-scrollbar/perfect-scrollbar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/perfect-scrollbar/perfect-scrollbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/perfect-scrollbar/perfect-scrollbar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/progressbar/progressbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/progressbar/progressbar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/select2/select2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/select2/select2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/slick/ajax-loader.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/slick/config.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/slick/fonts/slick.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/slick/fonts/slick.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/slick/fonts/slick.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/slick/fonts/slick.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/slick/slick-theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/slick/slick-theme.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/slick/slick-theme.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/slick/slick.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/slick/slick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/slick/slick.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/slick/slick.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/slick/slick.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/smk-accordion/accordion.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/smk-accordion/accordion.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/smk-accordion/accordion.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/sweetalert/sweetalert.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/vector-map/jquery.vmap.brazil.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/vector-map/jquery.vmap.europe.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/vector-map/jquery.vmap.france.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/vector-map/jquery.vmap.germany.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/vector-map/jquery.vmap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/vector-map/jquery.vmap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/vector-map/jquery.vmap.russia.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/vector-map/jquery.vmap.sampledata.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/vector-map/jquery.vmap.usa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/vector-map/jquery.vmap.world.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/vector-map/jqvmap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/wow/animate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/vendor/wow/wow.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/about.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/forget-pass.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/scss/comment.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+    <list default="true" id="20ad8bfc-e052-4c50-a05d-1928ac9be830" name="Changes" comment="almost final">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/Admin/AddSaleOffServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/Admin/DeleteSaleOffServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/Admin/EditSaleOffServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/customer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/preview.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/rooms.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/saleoff.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/services.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/staff.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Authentication/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Authentication/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Authentication/AuthenticateHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Authentication/AuthenticateHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Authentication/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Authentication/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Authentication/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Authentication/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Booking/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Booking/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Booking/BookingHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Booking/BookingHandle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/BookingLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/SQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/SQLConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/ServiceLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/ServiceLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/BookingServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/BookingServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/CheckoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/CheckoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/UpdatePriceServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/UpdatePriceServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/about.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/blog-single.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/blog.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/booknow.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/booknow.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/contact.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/include/header/lowHeader.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/header/lowHeader.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/rooms.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/rooms.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/scss/cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scss/cart.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/sign.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sign.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/fontawesome.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/form.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -399,6 +64,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 6
+}]]></component>
   <component name="ProjectId" id="2X6SjGexI3v5SK1raXE3ue2qen6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -412,7 +81,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/IdeaProjects/HiHaHeHeHeSaranghaeDaisukiWoainiSpa/src/main/webapp/admin",
+    "last_opened_file_path": "D:/IdeaProjects/HiHaHeHeHeSaranghaeDaisukiWoainiSpa/src/main/webapp/adminPanel",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -432,6 +101,7 @@
       <recent name="me.sjihh.spaservice.Room" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\HiHaHeHeHeSaranghaeDaisukiWoainiSpa\src\main\webapp\adminPanel" />
       <recent name="D:\IdeaProjects\HiHaHeHeHeSaranghaeDaisukiWoainiSpa\src\main\webapp\admin" />
       <recent name="D:\CodingProjects\Java\SpaService\src\main\webapp" />
       <recent name="D:\CodingProjects\Java\SpaService\src\main\webapp\images" />
@@ -590,6 +260,7 @@
       <workItem from="1700894036099" duration="6832000" />
       <workItem from="1700931134122" duration="30391000" />
       <workItem from="1701052029985" duration="7410000" />
+      <workItem from="1701593053916" duration="6626000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1697970364252</created>
@@ -640,7 +311,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701016339786</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="almost final">
+      <option name="closed" value="true" />
+      <created>1701443137631</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701443137632</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,6 +343,7 @@
     <MESSAGE value="account and booking" />
     <MESSAGE value="contraist conflict fix" />
     <MESSAGE value="maven fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="maven fix" />
+    <MESSAGE value="almost final" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost final" />
   </component>
 </project>
