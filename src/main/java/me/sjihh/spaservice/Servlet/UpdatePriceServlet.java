@@ -46,10 +46,15 @@ public class UpdatePriceServlet extends HttpServlet {
             }
             String promo = request.getParameter("promo");
 
+            if (promo == null) promo = ""; else
             if (promo.equals("null")) promo = "";
 
-
-            LocalDateTime dateTime = LocalDateTime.parse(request.getParameter("time"));
+            LocalDateTime dateTime;
+            try {
+                dateTime = LocalDateTime.parse(request.getParameter("time"));
+            } catch (Exception e) {
+                dateTime = null;
+            }
             if (request.getParameter("time") == null) {
                 dateTime = LocalDateTime.now();
                 System.out.println("AAAA");

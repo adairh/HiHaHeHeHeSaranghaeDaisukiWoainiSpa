@@ -9,12 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20ad8bfc-e052-4c50-a05d-1928ac9be830" name="Changes" comment="more refactor">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="20ad8bfc-e052-4c50-a05d-1928ac9be830" name="Changes" comment="complete fix sale off">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/Admin/LoadSaleOffServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_5_2023_11_03_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_5_2023_11_03_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_5_2023_11_03_AM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_5_2023_11_03_AM__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_5_2023_11_05_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_5_2023_11_05_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/SQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/SQLConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Email/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Email/EmailSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/SaleOffLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/SaleOffLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/Admin/AddSaleOffServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/Admin/AddSaleOffServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/Admin/DeleteSaleOffServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/Admin/DeleteSaleOffServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/Admin/EditSaleOffServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/Admin/EditSaleOffServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/UpdatePriceServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/UpdatePriceServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/saleoff.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/saleoff.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/include/header/lowHeader.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/header/lowHeader.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +113,7 @@
       <recent name="D:\CodingProjects\Java\SpaService\src\main\webapp\include\header" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="me.sjihh.spaservice.Servlet.Admin" />
       <recent name="me.sjihh.spaservice.Servlet" />
     </key>
   </component>
@@ -337,6 +345,7 @@
     <MESSAGE value="contraist conflict fix" />
     <MESSAGE value="maven fix" />
     <MESSAGE value="almost final" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost final" />
+    <MESSAGE value="complete fix sale off" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete fix sale off" />
   </component>
 </project>
