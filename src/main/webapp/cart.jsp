@@ -9,7 +9,7 @@
 <%@ page import="java.time.LocalDateTime" %>
 <%@ page import="java.time.format.DateTimeFormatter" %>
 <jsp:include page="/include/header/highHeader.jsp"/>
-<link rel="stylesheet" href="scss/cart.scss">
+<%--<link rel="stylesheet" href="scss/cart.scss">--%>
 
 
 <title>LuxurySpa a Spa Template</title>
