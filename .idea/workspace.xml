@@ -9,9 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20ad8bfc-e052-4c50-a05d-1928ac9be830" name="Changes" comment="booking fix">
+    <list default="true" id="20ad8bfc-e052-4c50-a05d-1928ac9be830" name="Changes" comment="almost preview fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/preview.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/preview.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/rooms.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/rooms.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/saleoff.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/saleoff.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/services.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/services.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/staff.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/staff.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +76,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IdeaProjects/HiHaHeHeHeSaranghaeDaisukiWoainiSpa/src/main/webapp/adminPanel&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Learning/3rdYear/SemI/WebProgramming/universal-store&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -252,6 +259,7 @@
       <workItem from="1700931134122" duration="30391000" />
       <workItem from="1701052029985" duration="7410000" />
       <workItem from="1701593053916" duration="6626000" />
+      <workItem from="1701801814433" duration="970000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1697970364252</created>
@@ -317,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701769723274</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="almost preview fix">
+      <created>1701771491770</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701771491770</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,6 +359,7 @@
     <MESSAGE value="almost final" />
     <MESSAGE value="complete fix sale off" />
     <MESSAGE value="booking fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="booking fix" />
+    <MESSAGE value="almost preview fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost preview fix" />
   </component>
 </project>
