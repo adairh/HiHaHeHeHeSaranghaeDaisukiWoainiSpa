@@ -14,6 +14,11 @@ import java.sql.PreparedStatement;
 @WebServlet("/EditSaleOff")
 public class EditSaleOffServlet extends HttpServlet {
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         // Get parameters
