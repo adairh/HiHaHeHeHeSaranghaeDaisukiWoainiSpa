@@ -1,5 +1,6 @@
 package me.sjihh.spaservice.Email;
 
+import me.sjihh.spaservice.Authentication.Customer;
 import me.sjihh.spaservice.Booking.Booking;
 import me.sjihh.spaservice.Booking.BookingDetail;
 import me.sjihh.spaservice.Database.RoomLoader;
@@ -52,7 +53,7 @@ public class EmailSender {
 
         // Create a StringBuilder to construct the email body
         StringBuilder body = new StringBuilder();
-        body.append("Dear valued customer,\n\n");
+        body.append("Dear ").append(Customer.getUserById(booking.getCustomer_ID()).getUsername()).append(",\n\n");
         body.append("Thank you for choosing Luxury Spa for your relaxation needs.\n\n");
 
         // Include booking details
@@ -64,8 +65,8 @@ public class EmailSender {
         // Include booking details (services, rooms, staff, etc.)
         body.append("Booking Items:\n");
         for (BookingDetail bookingDetail : bookingDetails) {
-            body.append("- Service: ").append(getServiceName(bookingDetail.getService_ID())).append("\n");
-            body.append("- Room: ").append(getRoomType(bookingDetail.getRoom_ID())).append("\n");
+            body.append("- Service: ").append(getServiceName(bookingDetail.getService_ID()-1)).append("\n");
+            body.append("- Room: ").append(getRoomType(bookingDetail.getRoom_ID()-1)).append("\n");
             // Include more details as needed
             body.append("\n");
         }

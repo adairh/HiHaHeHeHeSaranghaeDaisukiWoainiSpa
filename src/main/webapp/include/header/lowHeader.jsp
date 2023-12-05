@@ -47,20 +47,29 @@
                     </li>
                     <%
                         } else {
+                            if (session.getAttribute("admin") == null || !(boolean)request.getSession().getAttribute("admin")) {
                     %>
-                    <li class="nav-item">
-                        <a class="nav-link" href="profile.jsp">Profile</a>
-                    </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="profile.jsp">Profile</a>
+                            </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.jsp">Cart</a>
-                    </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="cart.jsp">Cart</a>
+                            </li>
+
+                            <li class="nav-item cta">
+                                <a class="nav-link" href="booknow.jsp"><span>Book Now</span></a>
+                            </li>
                     <%
+                            } else {
+                                %>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="admin/index.jsp">Admin</a>
+                                </li>
+                    <%
+                            }
                         }
                     %>
-                    <li class="nav-item cta">
-                        <a class="nav-link" href="booknow.jsp"><span>Book Now</span></a>
-                    </li>
                 </ul>
 
             </div>

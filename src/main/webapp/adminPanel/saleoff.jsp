@@ -220,18 +220,36 @@
                             <div class="card">
                                 <div class="card-body card-block">
                                     <form>
-                                        <input type="hidden" id="editId">
-                                        <label>Start Date:</label>
-                                        <input type="datetime-local" id="editStart">
-                                        <label>Finish Date:</label>
-                                        <input type="datetime-local" id="editFinish">
-                                        <label>Percent:</label>
-                                        <input id="editPercent">
-                                        <label>Code:</label>
-                                        <input id="editCode">
+                                        <div class="row">
+                                            <input type="hidden" id="editId">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label>Start Date:</label>
+                                                <input type="datetime-local" id="editStart">
+                                            </div>
+                                            <div class="col-6">
+                                                <label>Finish Date:</label>
+                                                <input type="datetime-local" id="editFinish">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label>Percent:</label>
+                                                <input id="editPercent">
+                                            </div>
+                                            <div class="col-6">
+                                                <label>Code:</label>
+                                                <input id="editCode">
+                                            </div>
+                                        </div>
+
                                         <!-- other fields -->
+                                        <div class="row">
+                                            <a type="submit" onclick="saveEdit()">Save</a>
+                                        </div>
                                     </form>
-                                    <button onclick="saveEdit()">Save</button>
+
                                 </div>
                             </div>
                         </div>
@@ -272,7 +290,7 @@
                                             <td>
                                                 <button onclick="showEditPopup(<%= saleOff.getSaleOff_ID() %>)">Edit</button>
                                                 |||
-                                                <button onclick="deleteSaleoff(<%= saleOff.getSaleOff_ID() %>)">Delete</button>
+                                                <a href="${pageContext.request.contextPath}/DeleteSaleOff?id=<%=saleOff.getSaleOff_ID()%>">Delete</a>
                                             </td>
                                         </tr>
                                         <%
@@ -324,10 +342,8 @@
             let percent = document.getElementById("discountPercent").value;
             let code = document.getElementById("discountCode").value;
 
-            fetch("/AddSaleOff?start=" + start + "&end=" + end + "&percent=" + percent + "&code=" + code);
+            window.location.href = "/AddSaleOff?start=" + start + "&end=" + end + "&percent=" + percent + "&code=" + code;
 
-            // Reload page
-            window.location.reload();
         }
 
         let addSaleOffBtn = document.getElementById("addSaleOffBtn");
@@ -348,17 +364,17 @@
         function showEditPopup(saleoffId) {
 
             // Get saleoff data from API
-            fetch("/getSaleoff?id=" + saleoffId)
+            fetch("/LoadSaleOff?id=" + saleoffId)
                 .then(res => res.json())
                 .then(saleoff => {
                     selectedSaleoff = saleoff;
 
                     // Populate values
-                    document.getElementById("editId").value = selectedSaleoff.id;
-                    document.getElementById("editStart").value = selectedSaleoff.start;
-                    document.getElementById("editEnd").value = selectedSaleoff.end;
-                    document.getElementById("editPercent").value = selectedSaleoff.percent;
-                    document.getElementById("editCode").value = selectedSaleoff.code;
+                    document.getElementById("editId").value = selectedSaleoff.id == null ? "" : selectedSaleoff.id;
+                    document.getElementById("editStart").value = selectedSaleoff.start == null ? "" : selectedSaleoff.start;
+                    document.getElementById("editFinish").value = selectedSaleoff.finish == null ? "" : selectedSaleoff.finish;
+                    document.getElementById("editPercent").value = selectedSaleoff.percent == null ? "" : selectedSaleoff.percent;
+                    document.getElementById("editCode").value = selectedSaleoff.code == null ? "" : selectedSaleoff.code;
 
                     // Show popup
                     document.getElementById("editPopup").style.display = "block";
@@ -372,55 +388,21 @@
 
         function saveEdit() {
 
-            // Get updated value
-            let updatedSaleoff = {
-                id: document.getElementById("editId").value,
-                start: document.getElementById("editStart").value,
-                end: document.getElementById("editEnd").value,
-                percent: document.getElementById("editPercent").value,
-                code: document.getElementById("editCode").value
-            };
 
-            // Validate input
-
-            // Call API to update
-            fetch("/EditSaleOff", {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(updatedSaleoff)
-            })
-                .then(res => {
-                    // Close popup
-                    document.getElementById("editPopup").style.display = "none";
-
-                    // Reload page
-                    window.location.reload();
-                })
-                .catch(err => {
-                    console.log(err);
-                });
+            window.location.href = "/EditSaleOff?id=" + (document.getElementById("editId").value == null ? "" :
+                    document.getElementById("editId").value)
+                + "&start=" + (document.getElementById("editStart").value  == null ? "" :
+                    document.getElementById("editStart").value)
+                + "&end=" + (document.getElementById("editFinish").value == null ? "" :
+                    document.getElementById("editFinish").value)
+                + "&percent=" + (document.getElementById("editPercent").value  == null ? "" :
+                    document.getElementById("editPercent").value)
+                + "&code=" + (document.getElementById("editCode").value == null ? "" :
+                    document.getElementById("editCode").value);
 
         }
 
-        function deleteSaleoff(saleoffId) {
 
-            if (confirm("Are you sure?")) {
-
-                fetch("/DeleteSaleOff?id=" + saleoffId, {
-                    method: "DELETE"
-                })
-                    .then(res => {
-                        window.location.reload();
-                    })
-                    .catch(err => {
-                        console.log(err);
-                    })
-
-            }
-
-        }
 
 
     </script>

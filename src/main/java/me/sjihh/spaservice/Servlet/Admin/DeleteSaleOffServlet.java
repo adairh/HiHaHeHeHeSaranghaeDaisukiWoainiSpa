@@ -29,5 +29,6 @@ public class DeleteSaleOffServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        response.sendRedirect("/admin/saleoff.jsp");
     }
 }
