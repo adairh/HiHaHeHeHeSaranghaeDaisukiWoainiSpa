@@ -5,6 +5,7 @@
 <%@ page import="me.sjihh.spaservice.Booking.Booking" %>
 <%@ page import="me.sjihh.spaservice.Database.BookingDetailLoader" %>
 <%@ page import="me.sjihh.spaservice.Database.RoomLoader" %>
+<%@ page import="java.time.LocalDateTime" %>
 <jsp:include page="/include/header/highHeader.jsp"/>
 <link rel="stylesheet" href="css/profile.css">
 <title>LuxurySpa a Spa Template</title>
@@ -224,9 +225,59 @@
 
 						%>
 
-				<div class="row">
+				<a class="row btn" onclick="showPreview(<%=booking.getBooking_ID()%>)">
 					Booking: #<%=booking.getBooking_ID()%>
-				</div>
+				</a><br>
+					Date: <%=booking.getBooking_date()==null?"":booking.getBooking_date().toString()%>
+				<%--<div class="booking-preview" id="booking-<%=booking.getBooking_ID()%>" style="display: none">
+					<%
+						for (BookingDetailLoader bookingDetail : BookingDetailLoader.getBookingDetailsByBookingID(booking.getBooking_ID())) {
+					%>
+						<table>
+							<tr>
+								<th>Service</th>
+								<th>Status</th>
+								<th>Preview</th>
+							</tr>
+							<tr>
+								<td>
+									<%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()-1).getService_name()%>
+								</td>
+								<td>
+									<%
+										String s = "";
+										Object o = booking.getBooking_date();
+										if (o != null){
+											if (LocalDateTime.now().isAfter(LocalDateTime.parse(o.toString()))) {
+												s = "DONE";
+											} else {
+												s = "PENDING";
+											}
+										} else {
+											s = "UNKNOWN";
+										}
+									%>
+									<%=s%>;
+								</td>
+								<td>
+
+									<form id="myForm">
+										<label for="inputField">Input:</label>
+										<input type="text" id="inputField" name="inputField" placeholder="Type something...">
+										<button type="button" onclick="handleButtonClick()">Submit</button>
+									</form>
+								</td>
+							</tr>
+						</table>
+						<b><br>
+						</b>
+
+					<%
+						}
+					%>
+					<br><a onclick="hidePreview(<%=booking.getBooking_ID()%>)">Close</a>
+				</div>--%>
+				<br>
 				<br>
 				<div class="row">
 					<div class="col-4">
@@ -279,6 +330,27 @@
 	function hidePopup() {
 		var overlay = document.getElementById("overlay");
 		var popupDiv = document.getElementById("update");
+
+		overlay.style.display = "none";
+		popupDiv.style.display = "none";
+	}
+
+	function showPreview(bookmarkId) {
+		console.log("action")
+		// Get the reference to the div based on the service ID
+		var popupDiv = document.getElementById("booking-"+bookmarkId);
+
+		// Toggle the visibility
+		if (popupDiv.style.display === "none") {
+			popupDiv.style.display = "block";
+		} else {
+			popupDiv.style.display = "none";
+		}
+	}
+
+	function hidePreview(bookmarkId) {
+		var overlay = document.getElementById("overlay");
+		var popupDiv = document.getElementById("booking-"+bookmarkId);
 
 		overlay.style.display = "none";
 		popupDiv.style.display = "none";
