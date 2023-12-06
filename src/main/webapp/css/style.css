@@ -20,7 +20,11 @@ a:hover {
 
 h1, h2, h3, h4, h5 {
   color: #ffeb55;
-  font-family: "Playfair Display", times, serif;
+}
+
+h4{
+  color: #333;
+  font-weight: 600;
 }
 
 header {
@@ -1334,7 +1338,7 @@ textarea.form-control {
 }
 
 .site-footer a {
-  color: #000;
+  color: #fff;
 }
 
 .site-footer a:hover {
@@ -1355,7 +1359,13 @@ textarea.form-control {
 }
 
 .subscribe input[type="email"] {
+  border: none;
+  border-radius: 3px;
   padding-right: 40px;
+}
+
+.subscribe input[type="email"]:focus{
+  border: 1px solid #333;
 }
 
 .subscribe button {

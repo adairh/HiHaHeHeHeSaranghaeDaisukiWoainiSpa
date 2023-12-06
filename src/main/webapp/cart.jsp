@@ -9,8 +9,7 @@
 <%@ page import="java.time.LocalDateTime" %>
 <%@ page import="java.time.format.DateTimeFormatter" %>
 <jsp:include page="/include/header/highHeader.jsp"/>
-<%--<link rel="stylesheet" href="scss/cart.scss">--%>
-
+<link rel="stylesheet" href="./css/cart.css">
 
 <title>LuxurySpa a Spa Template</title>
 <jsp:include page="/include/header/lowHeader.jsp"/>
@@ -61,56 +60,42 @@
 
 
                   <div class="cart">
-
                           <ul class="cartWrap">
-
                               <%
                                   for (BookingDetail bookingDetail : (List<BookingDetail>)session.getAttribute("services")) {
                               %>
-
                               <div class="row">
                                   <div class="col-4">
                                       <img style="width: 150px;" src="${pageContext.request.contextPath}/images/big_image_1.jpeg" alt="" class="itemImg" />
                                   </div>
-
                                   <div class="col-1">
                                       <p class="itemNumber">#<%=bookingDetail.getService_ID()%></p>
                                   </div>
-
                                   <div class="col-3">
                                       <h3><%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()-1).getService_name()%></h3>
                                   </div>
-
                                   <div class="col-3">
                                       <div class="prodTotal cartSection">
                                           <p> <%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()-1).getService_price()%>,000 VND</p>
                                       </div>
                                   </div>
-
-                                  <div class="col-1">
+                                  <div class="col-1 remove-icon">
                                       <div class="cartSection removeWrap">
                                           <a href="RemoveBooking?service=<%=bookingDetail.getService_ID()%>" class="remove">x</a>
                                       </div>
                                   </div>
-
                               </div>
-
                               <%
                                   }
                               %>
-
-
                               <!--<li class="items even">Item 2</li>-->
-
                           </ul>
-
-
                           <br>
                           <br>
 
                           <div class="row">
                               <div class="col-3">
-                                <h4 for="roomSelect">Select a Room:</h4>
+                                <h4 class="h4-title" for="roomSelect">Select a Room:</h4>
                               </div>
                               <div class="col-3">
                                   <select name="room" id="roomSelect" onchange="updatePrice()" >
@@ -134,19 +119,12 @@
                                   </select>
                               </div>
                               <div class="col-3">
-                                  <h4>Date of service</h4>
+                                  <h4 class="h4-title">Date of service</h4>
                               </div>
-
                               <div class="col-3">
                                   <!-- Date and Time Picker Input -->
-
-
-
-
                                   <input type="datetime-local" id="dateTimePicker" min="" max="">
-
                               </div>
-
                           </div>
 
                       <br>
@@ -155,49 +133,51 @@
                       </div>
 
 
-                  <div class="promoCode">
-                      <div class="row">
-                          <%String promo = String.valueOf(session.getAttribute("promo"));%>
-                          <span>
+                  <div class="bill-area">
+                      <div class="promo-area col-2-bill">
+                          <div class="promoCode">
+                              <div class="promoCode-item">
+                                  <%String promo = String.valueOf(session.getAttribute("promo"));%>
+                                  <span>
+                                      <label for="promo">Promo Code?</label>
                             <input type="text" id="promo" name="promo" placeholder="Enter Code"
                                    value="<%=
                                      promo!=null?
                                      session.getAttribute("promo"):
                                      ""
                                      %>"/>
-                              <label for="promo">Promo Code?</label>
                           </span>
 
+                              </div>
+                              <div class="promoCode-item">
+                                  <button class="btn" onclick="updatePrice()">Apply Promo</button>
+                              </div>
+                              <div id="discountResult"></div>
+                          </div>
                       </div>
-                      <div class="row">
-                          <button class="btn" onclick="updatePrice()">Apply Promo</button>
-                      </div>
-                      <div id="discountResult"></div>
-                  </div>
-
-                  <div class="subtotal cf">
-                      <ul>
-                          <li class="totalRow">
-                              <span class="label">Subtotal</span>
-                              <span class="value">
+                      <div class="subtotal cf col-2-bill">
+                          <ul>
+                              <li class="totalRow">
+                                  <span class="label">Subtotal</span>
+                                  <span class="value">
                                   <%=BookingHandle.getTotalPrice((List<BookingDetail>)session.getAttribute("services"))%> VND
                                       </span>
-                          </li>
+                              </li>
 
-                          <li class="totalRow"><span class="label">Room</span><span class="value">
+                              <li class="totalRow disFlex"><span class="label">Room</span><span class="value">
                                   <p><span id="priceDisplay">
                                       <%=
                                       (session.getAttribute("room") != null && (Integer)session.getAttribute("room") >= 0) ?
-                                                RoomLoader.loadRooms().get((Integer) session.getAttribute("room")).getRoom_price()
-                                                : 0
+                                              RoomLoader.loadRooms().get((Integer) session.getAttribute("room")).getRoom_price()
+                                              : 0
                                       %>
                                   </span></p>
                               </span></li>
 
-                          <li class="totalRow"><span class="label">Member Discount</span><span class="value">
+                              <li class="totalRow"><span class="label">Member Discount</span><span class="value">
                                   <%=LevelLoader.getLevelByID(user.getLevel_id()).getSale_percent()%>%
                               </span></li>
-                          <li class="totalRow"><span class="label">Voucher Discount</span><span class="value">
+                              <li class="totalRow"><span class="label">Voucher Discount</span><span class="value">
                                   <%
                                       int discount = 0;
                                       if (session.getAttribute("promo") != null) {
@@ -212,7 +192,7 @@
                                   %>
                                   <%=discount%>%
                               </span></li>
-                          <li class="totalRow final"><span class="label">Total</span><span class="value">
+                              <li class="totalRow final disFlex"><span class="label">Total</span><span class="value">
                                   <%
                                       session.setAttribute("servicePrice",
                                               BookingHandle.getTotalPrice((List<BookingDetail>)session.getAttribute("services")));
@@ -224,8 +204,9 @@
                                   <p><span id="finalPrice"><%=price%></span></p>
 
                               </span></li>
-                          <li class="totalRow"><a href="checkout" class="btnn continue">Checkout</a></li>
-                      </ul>
+                              <li class="totalRow"><a href="checkout" class="btnn continue">Checkout</a></li>
+                          </ul>
+                      </div>
                   </div>
 
               </div>
