@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20ad8bfc-e052-4c50-a05d-1928ac9be830" name="Changes" comment="image fix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/about.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/booknow.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/booknow.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="20ad8bfc-e052-4c50-a05d-1928ac9be830" name="Changes" comment="almost preview fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,8 +23,8 @@
         <option value="JavaScript File" />
         <option value="Class" />
         <option value="SCSS File" />
-        <option value="CSS File" />
         <option value="Jsp File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -69,15 +65,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/CodingProjects/Java/SpaService/src/main/webapp/images",
+    "last_opened_file_path": "/Users/NhuYTruong/Documents/Vyle/Web_Project/HiHaHeHeHeSaranghaeDaisukiWoainiSpa",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.32068965",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -90,11 +85,11 @@
       <recent name="me.sjihh.spaservice.Room" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\CodingProjects\Java\SpaService\src\main\webapp\images" />
-      <recent name="D:\CodingProjects\Java\SpaService\src\main\webapp\service" />
       <recent name="D:\IdeaProjects\HiHaHeHeHeSaranghaeDaisukiWoainiSpa\src\main\webapp\adminPanel" />
       <recent name="D:\IdeaProjects\HiHaHeHeHeSaranghaeDaisukiWoainiSpa\src\main\webapp\admin" />
       <recent name="D:\CodingProjects\Java\SpaService\src\main\webapp" />
+      <recent name="D:\CodingProjects\Java\SpaService\src\main\webapp\images" />
+      <recent name="D:\CodingProjects\Java\SpaService\src\main\webapp\include" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IdeaProjects\HiHaHeHeHeSaranghaeDaisukiWoainiSpa\src\main\webapp" />
@@ -122,7 +117,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 8.5.93" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.93" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Tomcat 8.5.93" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.96" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081" />
       <deployment>
         <artifact name="HiHaHeHeHeSaranghaeDaisukiWoainiSpa:war exploded">
@@ -253,8 +248,8 @@
       <workItem from="1700931134122" duration="30391000" />
       <workItem from="1701052029985" duration="7410000" />
       <workItem from="1701593053916" duration="6626000" />
-      <workItem from="1701801814433" duration="7720000" />
-      <workItem from="1701830121040" duration="4874000" />
+      <workItem from="1701801814433" duration="970000" />
+      <workItem from="1701804021573" duration="10139000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1697970364252</created>
@@ -327,21 +322,7 @@
       <option name="project" value="LOCAL" />
       <updated>1701771491770</updated>
     </task>
-    <task id="LOCAL-00011" summary="cart">
-      <created>1701802919789</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1701802919789</updated>
-    </task>
-    <task id="LOCAL-00012" summary="image fix">
-      <created>1701834298151</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1701834298151</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,8 +350,6 @@
     <MESSAGE value="complete fix sale off" />
     <MESSAGE value="booking fix" />
     <MESSAGE value="almost preview fix" />
-    <MESSAGE value="cart" />
-    <MESSAGE value="image fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="image fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost preview fix" />
   </component>
 </project>
