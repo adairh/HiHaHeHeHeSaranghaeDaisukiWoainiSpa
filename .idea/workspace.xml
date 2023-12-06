@@ -9,16 +9,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20ad8bfc-e052-4c50-a05d-1928ac9be830" name="Changes" comment="almost preview fix">
+    <list default="true" id="20ad8bfc-e052-4c50-a05d-1928ac9be830" name="Changes" comment="cart">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/customer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/preview.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/preview.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/rooms.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/rooms.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/saleoff.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/saleoff.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/services.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/services.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminPanel/staff.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminPanel/staff.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Authentication/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Authentication/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/PreviewLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/PreviewLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/ServiceLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/ServiceLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Email/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Email/EmailSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/CheckoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/CheckoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/UpdatePriceServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/UpdatePriceServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/about.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/booknow.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/booknow.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/include/footer/highFooter.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/footer/highFooter.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/include/header/firstSection.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/header/firstSection.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/rooms.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/rooms.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,38 +88,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Learning/3rdYear/SemI/WebProgramming/universal-store&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.32068965&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/CodingProjects/Java/SpaService/src/main/webapp/images",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.32068965",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="me.sjihh.spaservice.Service" />
       <recent name="me.sjihh.spaservice.Room" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CodingProjects\Java\SpaService\src\main\webapp\images" />
+      <recent name="D:\CodingProjects\Java\SpaService\src\main\webapp\service" />
       <recent name="D:\IdeaProjects\HiHaHeHeHeSaranghaeDaisukiWoainiSpa\src\main\webapp\adminPanel" />
       <recent name="D:\IdeaProjects\HiHaHeHeHeSaranghaeDaisukiWoainiSpa\src\main\webapp\admin" />
       <recent name="D:\CodingProjects\Java\SpaService\src\main\webapp" />
-      <recent name="D:\CodingProjects\Java\SpaService\src\main\webapp\images" />
-      <recent name="D:\CodingProjects\Java\SpaService\src\main\webapp\include" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IdeaProjects\HiHaHeHeHeSaranghaeDaisukiWoainiSpa\src\main\webapp" />
@@ -259,7 +278,8 @@
       <workItem from="1700931134122" duration="30391000" />
       <workItem from="1701052029985" duration="7410000" />
       <workItem from="1701593053916" duration="6626000" />
-      <workItem from="1701801814433" duration="970000" />
+      <workItem from="1701801814433" duration="7720000" />
+      <workItem from="1701830121040" duration="4019000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1697970364252</created>
@@ -332,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701771491770</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="cart">
+      <created>1701802919789</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701802919789</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,6 +387,7 @@
     <MESSAGE value="complete fix sale off" />
     <MESSAGE value="booking fix" />
     <MESSAGE value="almost preview fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost preview fix" />
+    <MESSAGE value="cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="cart" />
   </component>
 </project>

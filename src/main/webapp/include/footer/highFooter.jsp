@@ -27,7 +27,7 @@
             </div>
             <div class="col-md-4">
                 <h3>Connect With Us</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, odio.</p>
+
                 <form action="#" class="subscribe">
                     <div class="form-group">
                         <button type="submit"><span class="ion-ios-arrow-thin-right"></span></button>
@@ -40,7 +40,7 @@
         <div class="row justify-content-center">
             <div class="col-md-7 text-center">
                 &copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </div>
         </div>

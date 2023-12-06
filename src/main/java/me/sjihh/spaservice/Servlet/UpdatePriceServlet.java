@@ -25,7 +25,9 @@ public class UpdatePriceServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         double total = 0;
         if (request.getParameterMap().size() == 0) {
-            double servicePrice = (double) request.getSession().getAttribute("servicePrice");
+            double servicePrice = 0.0;
+            if (request.getSession().getAttribute("servicePrice") != null)
+                servicePrice = (double) request.getSession().getAttribute("servicePrice");
 
             Customer user = ((Customer) request.getSession().getAttribute("user"));
             int lvl = LevelLoader.getLevelByID(user.getLevel_id()).getSale_percent();

@@ -6,6 +6,7 @@
 <%@ page import="me.sjihh.spaservice.Database.BookingDetailLoader" %>
 <%@ page import="me.sjihh.spaservice.Database.RoomLoader" %>
 <%@ page import="java.time.LocalDateTime" %>
+<%@ page import="me.sjihh.spaservice.Database.PreviewLoader" %>
 <jsp:include page="/include/header/highHeader.jsp"/>
 <link rel="stylesheet" href="css/profile.css">
 <title>LuxurySpa a Spa Template</title>
@@ -229,6 +230,7 @@
 					Booking: #<%=booking.getBooking_ID()%>
 				</a><br>
 					Date: <%=booking.getBooking_date()==null?"":booking.getBooking_date().toString()%>
+
 				<%--<div class="booking-preview" id="booking-<%=booking.getBooking_ID()%>" style="display: none">
 					<%
 						for (BookingDetailLoader bookingDetail : BookingDetailLoader.getBookingDetailsByBookingID(booking.getBooking_ID())) {
@@ -236,36 +238,41 @@
 						<table>
 							<tr>
 								<th>Service</th>
-								<th>Status</th>
+
 								<th>Preview</th>
 							</tr>
 							<tr>
 								<td>
 									<%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()-1).getService_name()%>
 								</td>
-								<td>
-									<%
-										String s = "";
-										Object o = booking.getBooking_date();
-										if (o != null){
-											if (LocalDateTime.now().isAfter(LocalDateTime.parse(o.toString()))) {
-												s = "DONE";
-											} else {
-												s = "PENDING";
-											}
-										} else {
-											s = "UNKNOWN";
-										}
-									%>
-									<%=s%>;
-								</td>
+
+
 								<td>
 
-									<form id="myForm">
-										<label for="inputField">Input:</label>
-										<input type="text" id="inputField" name="inputField" placeholder="Type something...">
-										<button type="button" onclick="handleButtonClick()">Submit</button>
-									</form>
+									<%
+										boolean is = false;
+										PreviewLoader pp = null;
+										for (PreviewLoader pl : PreviewLoader.getPreviewsByCustomerID(booking.getCustomer_ID())) {
+											if (pl.getService_ID() == bookingDetail.getService_ID()) {
+												is = true;
+												pp = pl;
+											}
+										}
+
+										if (is) {
+											<%=
+												pp.getComment()
+											%>
+										} else {
+									%>
+										<form id="myForm">
+											<label for="inputField"></label>
+											<input type="text" id="inputField" name="inputField" placeholder="Preview...">
+											<button type="button" onclick="handleButtonClick()">Submit</button>
+										</form>
+										<%
+										}
+									%>
 								</td>
 							</tr>
 						</table>
@@ -277,6 +284,7 @@
 					%>
 					<br><a onclick="hidePreview(<%=booking.getBooking_ID()%>)">Close</a>
 				</div>--%>
+
 				<br>
 				<br>
 				<div class="row">

@@ -3,12 +3,15 @@ package me.sjihh.spaservice.Email;
 import me.sjihh.spaservice.Authentication.Customer;
 import me.sjihh.spaservice.Booking.Booking;
 import me.sjihh.spaservice.Booking.BookingDetail;
+import me.sjihh.spaservice.Database.BookingDetailLoader;
 import me.sjihh.spaservice.Database.RoomLoader;
 import me.sjihh.spaservice.Database.ServiceLoader;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
@@ -139,4 +142,24 @@ public class EmailSender {
         }
     }
 
+    public static List<ServiceLoader> getAllServicesBookedByUser(int userId) {
+        System.out.println(userId);
+        List<ServiceLoader> lsl = new ArrayList<ServiceLoader>();
+        System.out.println(lsl.toArray().toString());
+        for (Booking b : Booking.getBookingsByCustomerID(userId)) {
+            System.out.println(b.getBooking_ID());
+            for (BookingDetailLoader bd : BookingDetailLoader.getBookingDetailsByBookingID(b.getBooking_ID())) {
+                System.out.println("A" + bd.getService_ID());
+                if (!lsl.contains(ServiceLoader.loadServices().get(bd.getService_ID() - 1))) {
+                    System.out.println(ServiceLoader.loadServices().get(bd.getService_ID() - 1).getService_name() + " " + lsl.size());
+                    lsl.add(ServiceLoader.loadServices().get(bd.getService_ID() - 1));
+                }
+            }
+        }
+        return lsl;
+    }
+
+    public static void main(String[] args) {
+        getAllServicesBookedByUser(1);
+    }
 }
