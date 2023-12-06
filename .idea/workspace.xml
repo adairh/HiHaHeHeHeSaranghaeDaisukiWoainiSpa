@@ -249,7 +249,7 @@
       <workItem from="1701052029985" duration="7410000" />
       <workItem from="1701593053916" duration="6626000" />
       <workItem from="1701801814433" duration="970000" />
-      <workItem from="1701804021573" duration="10139000" />
+      <workItem from="1701804021573" duration="10492000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1697970364252</created>
@@ -351,5 +351,16 @@
     <MESSAGE value="booking fix" />
     <MESSAGE value="almost preview fix" />
     <option name="LAST_COMMIT_MESSAGE" value="almost preview fix" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/cart.jsp</url>
+          <line>137</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
