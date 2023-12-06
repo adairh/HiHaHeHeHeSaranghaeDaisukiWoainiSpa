@@ -1,5 +1,7 @@
 package me.sjihh.spaservice.Database;
 
+import me.sjihh.spaservice.Booking.Booking;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,6 +25,27 @@ public class ServiceLoader {
         this.service_price = service_price;
         this.service_time = service_time;
         this.service_detail = service_detail;
+    }
+
+    public static List<ServiceLoader> bookedServiceByUser(int userID) {
+
+        List<ServiceLoader> serviceLoaders = new ArrayList<>();
+        for (Booking booking : Booking.getBookingsByCustomerID(userID)) {
+            for (BookingDetailLoader bookingDetailLoader : BookingDetailLoader.getBookingDetailsByBookingID(booking.getBooking_ID())) {
+                serviceLoaders.add(ServiceLoader.loadServices().get(bookingDetailLoader.getService_ID()-1));
+            }
+        }
+        return serviceLoaders;
+    }
+
+    public static boolean isBooked(int userID, int service) {
+        List<ServiceLoader> serviceLoaders = bookedServiceByUser(userID);
+        for (ServiceLoader serviceLoader : serviceLoaders) {
+            if (service == serviceLoader.getService_ID()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static List<ServiceLoader> loadServices() {

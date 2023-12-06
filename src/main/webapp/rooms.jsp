@@ -33,10 +33,52 @@
     </div>
 
 
+
     <br>
     <%
       }
     %>
+
+    <div class="row">
+      <%
+        if (session!=null && session.getAttribute("user") != null) {
+          Customer user = ((Customer) session.getAttribute("user"));
+          if (ServiceLoader.isBooked(user.getId(), service.getService_ID())) {
+          %>
+          <div class="row">
+            <form class="col-12" style="margin: 0 auto;" method="GET" action="Review">
+              <%--<div class="col-6">
+                <select class="form-control" name="service_ID">
+                  <%
+                    if (session!=null && session.getAttribute("user") != null) {
+                      Customer user = ((Customer)session.getAttribute("user"));
+                      for (ServiceLoader service : Customer.getAllServicesBookedByUser(user.getId())) {
+                      %>
+                      <option value="<%=service.getService_ID()%>"><%=service.getService_name()%></option>
+                      <%
+                      }
+                    }
+                  %>
+                </select>
+              </div>--%>
+              <input type="hidden" value="<%=service.getService_ID()%>" name="service_ID">
+              <div>
+                <label>
+                  <input id="review" type="text" class="form-control" placeholder="Review" value="" name="comment">
+                </label>
+              </div>
+              <div>
+                <button class="btn" type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+          <%
+          }
+        }
+      %>
+    </div>
+
+
     <p><a href="${pageContext.request.contextPath}/booknow.jsp" class="btn btn-primary btn-sm">Book now!</a></p>
 
     <!-- -->
@@ -64,6 +106,7 @@
 
     <section class="site-section">
       <div class="container">
+
         <div class="row">
 
 
@@ -74,7 +117,7 @@
           <div class="col-md-4 mb-4">
             <div class="media d-block room mb-0">
               <figure>
-                <img src="images/img_3.jpg" alt="Generic placeholder image" class="img-fluid">
+                <img src="service/<%=service.getService_ID()%>.png" style="height: 300px; width: 500px;" alt="Generic placeholder image" class="img-fluid">
                 <%--<div class="overlap-text">
                   <span>
                     Featured Ser
@@ -108,19 +151,31 @@
 
 
 
+
         </div>
+        <br>
+
+
+
       </div>
     </section>
 
-   
-   
+
+<%--<script>
+  function changeInput() {
+    var optionName = document.getElementById(document.getElementById("review").value).value;
+    document.getElementById("review").value = <%=%>
+  }
+</script>--%>
+
 
     <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/img_5.jpg);">
       <div class="container">
         <div class="row justify-content-center align-items-center intro">
           <div class="col-md-9 text-center element-animate">
             <h2>Relax and Enjoy your Holiday</h2>
-            <p class="lead mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quidem tempore expedita facere facilis, dolores!</p>
+            <%--<p class="lead mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quidem tempore expedita facere facilis, dolores!</p>
+            --%>
             <div class="btn-play-wrap"><a href="https://vimeo.com/channels/staffpicks/93951774" class="btn-play popup-vimeo "><span class="ion-ios-play"></span></a></div>
           </div>
         </div>

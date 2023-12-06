@@ -39,13 +39,13 @@
                     <h2 class="name"><%=serviceLoader.getService_name()%></h2>
                     <span class="price"><%=serviceLoader.getService_price()%>,000 VND</span>
                     <a class="popup-btn">Quick View</a>
-                    <img src="${pageContext.request.contextPath}/images/big_image_1.jpeg" class="product-img" alt="">
+                    <img src="${pageContext.request.contextPath}/images/background.png" class="product-img" alt="">
                 </div>
                 <div class="popup-view">
                     <div class="popup-card">
                         <a><i class="fas fa-times close-btn"></i></a>
                         <div class="product-img">
-                            <img src="${pageContext.request.contextPath}/images/big_image_1.jpeg" alt="">
+                            <img src="${pageContext.request.contextPath}/images/background.png" alt="">
                         </div>
                         <div class="info">
                             <h3><%=serviceLoader.getService_name()%></h3>

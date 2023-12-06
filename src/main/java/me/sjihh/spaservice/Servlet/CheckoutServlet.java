@@ -50,6 +50,8 @@ public class CheckoutServlet extends HttpServlet {
 
         EmailSender.sendBookingConfirmationEmail(((Customer) request.getSession().getAttribute("user")).getEmail(), Booking.getBookingByID(bookingId), bookingDetails);
 
+        request.getSession().setAttribute("services", null);
+
         // Redirect to a success page or handle the response as needed
         response.sendRedirect("profile.jsp");
     }
