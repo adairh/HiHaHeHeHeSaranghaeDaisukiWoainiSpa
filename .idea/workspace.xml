@@ -9,35 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20ad8bfc-e052-4c50-a05d-1928ac9be830" name="Changes" comment="cart">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/service/9.png" afterDir="false" />
+    <list default="true" id="20ad8bfc-e052-4c50-a05d-1928ac9be830" name="Changes" comment="image fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Authentication/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Authentication/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/PreviewLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/PreviewLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/ServiceLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Database/ServiceLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Email/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Email/EmailSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/CheckoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/CheckoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/UpdatePriceServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/sjihh/spaservice/Servlet/UpdatePriceServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/about.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/booknow.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/booknow.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/include/footer/highFooter.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/footer/highFooter.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/include/header/firstSection.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/header/firstSection.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/rooms.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/rooms.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +254,7 @@
       <workItem from="1701052029985" duration="7410000" />
       <workItem from="1701593053916" duration="6626000" />
       <workItem from="1701801814433" duration="7720000" />
-      <workItem from="1701830121040" duration="4019000" />
+      <workItem from="1701830121040" duration="4874000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1697970364252</created>
@@ -359,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701802919789</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="image fix">
+      <created>1701834298151</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701834298151</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,6 +370,7 @@
     <MESSAGE value="booking fix" />
     <MESSAGE value="almost preview fix" />
     <MESSAGE value="cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="cart" />
+    <MESSAGE value="image fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="image fix" />
   </component>
 </project>

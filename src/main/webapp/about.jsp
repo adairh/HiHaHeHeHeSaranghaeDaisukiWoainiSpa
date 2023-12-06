@@ -45,7 +45,7 @@
           for (int i = 0; i < 6; i++) {
             StaffLoader staffLoader = StaffLoader.loadStaffs().get(i);
           %>
-          <div class="item <%=staffLoader.getStaff_ID()==1?"active" : ""%>" style="background-image: url(images/person_1.jpg);">
+          <div class="item <%=staffLoader.getStaff_ID()==1?"active" : ""%>" style="background-image: url(images/person_<%=i+1%>.jpg);">
             <div class="item-desc">
               <h3 class="mb-3"><a href="#"><%=staffLoader.getStaff_name()%></a></h3>
               <p class="mb-4">Experience staff of our Spa, and the major is doing <%=ServiceLoader.loadServices().get(staffLoader.getService_ID()-1).getService_name()%>!</p>
@@ -60,17 +60,6 @@
 
     <!-- END section -->
 
-    <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/img_5.jpg);">
-      <div class="container">
-        <div class="row justify-content-center align-items-center intro">
-          <div class="col-md-9 text-center element-animate">
-            <h2>Relax and Enjoy your Holiday</h2>
-            <p class="lead mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quidem tempore expedita facere facilis, dolores!</p>
-            <div class="btn-play-wrap"><a href="https://vimeo.com/channels/staffpicks/93951774" class="btn-play popup-vimeo "><span class="ion-ios-play"></span></a></div>
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- END section -->
 <jsp:include page="/include/footer/highFooter.jsp"/>
 <script>
