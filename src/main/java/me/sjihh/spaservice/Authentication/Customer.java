@@ -1,6 +1,10 @@
 package me.sjihh.spaservice.Authentication;
 
+import me.sjihh.spaservice.Booking.Booking;
+import me.sjihh.spaservice.Booking.BookingDetail;
+import me.sjihh.spaservice.Database.BookingDetailLoader;
 import me.sjihh.spaservice.Database.SQLConnection;
+import me.sjihh.spaservice.Database.ServiceLoader;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -103,6 +107,23 @@ public class Customer extends User{
         }
 
         return customerList;
+    }
+
+    public static List<ServiceLoader> getAllServicesBookedByUser(int userId) {
+        System.out.println(userId);
+        List<ServiceLoader> lsl = new ArrayList<ServiceLoader>();
+        System.out.println(lsl.toArray().toString());
+        for (Booking b : Booking.getBookingsByCustomerID(userId)) {
+            System.out.println(b.getBooking_ID());
+            for (BookingDetailLoader bd : BookingDetailLoader.getBookingDetailsByBookingID(b.getBooking_ID())) {
+                System.out.println("A" + bd.getService_ID());
+                if (!lsl.contains(ServiceLoader.loadServices().get(bd.getService_ID() - 1))) {
+                    System.out.println(ServiceLoader.loadServices().get(bd.getService_ID() - 1).getService_name() + " " + lsl.size());
+                    lsl.add(ServiceLoader.loadServices().get(bd.getService_ID() - 1));
+                }
+            }
+        }
+        return lsl;
     }
 
 }

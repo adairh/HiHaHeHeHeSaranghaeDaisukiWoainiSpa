@@ -48,7 +48,25 @@ public class PreviewLoader {
 
         return previewLoader;
     }
+    public static void insertOrUpdateReview(int customerId, int serviceId, String comment) {
+        try (Connection connection = SQLConnection.getConnection()) {
+            String query = "INSERT INTO preview (admin_ID, customer_ID, service_ID, comment) " +
+                    "VALUES (?, ?, ?, ?) " +
+                    "ON DUPLICATE KEY UPDATE comment = VALUES(comment)";
 
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setInt(1, 1);
+                preparedStatement.setInt(2, customerId);
+                preparedStatement.setInt(3, serviceId);
+                preparedStatement.setString(4, comment);
+
+                // Execute the query
+                preparedStatement.executeUpdate();
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
     public static List<PreviewLoader> loadPreviews() {
         List<PreviewLoader> previewLoaders = new ArrayList<>();
 
@@ -99,6 +117,16 @@ public class PreviewLoader {
         }
 
         return previewLoaders;
+    }
+
+    public static PreviewLoader getPreviewLoaderByUserAndService(int user, int service) {
+        List<PreviewLoader> list = getPreviewsByCustomerID(user);
+        for (PreviewLoader previewLoader : list) {
+            if (previewLoader.getService_ID() == service) {
+                return previewLoader;
+            }
+        }
+        return null;
     }
 
     public static List<PreviewLoader> getPreviewsByServiceID(int serviceID) {

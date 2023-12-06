@@ -42,15 +42,16 @@
         <h2 class="heading">Our Staff</h2>
         <div class="owl-carousel custom-carousel owl-theme">
           <%
-          for (StaffLoader staffLoader : StaffLoader.loadStaffs()) {
-            %>
+          for (int i = 0; i < 6; i++) {
+            StaffLoader staffLoader = StaffLoader.loadStaffs().get(i);
+          %>
           <div class="item <%=staffLoader.getStaff_ID()==1?"active" : ""%>" style="background-image: url(images/person_1.jpg);">
             <div class="item-desc">
               <h3 class="mb-3"><a href="#"><%=staffLoader.getStaff_name()%></a></h3>
               <p class="mb-4">Experience staff of our Spa, and the major is doing <%=ServiceLoader.loadServices().get(staffLoader.getService_ID()-1).getService_name()%>!</p>
             </div>
           </div>
-            <%
+          <%
           }
           %>
         </div>

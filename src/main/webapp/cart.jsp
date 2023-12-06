@@ -66,7 +66,7 @@
                               %>
                               <div class="row">
                                   <div class="col-4">
-                                      <img style="width: 150px;" src="${pageContext.request.contextPath}/images/big_image_1.jpeg" alt="" class="itemImg" />
+                                      <img style="width: 150px;" src="${pageContext.request.contextPath}/images/background.png" alt="" class="itemImg" />
                                   </div>
                                   <div class="col-1">
                                       <p class="itemNumber">#<%=bookingDetail.getService_ID()%></p>
