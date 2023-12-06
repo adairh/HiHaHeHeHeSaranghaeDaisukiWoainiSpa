@@ -1,0 +1,98 @@
+.cartWrap{
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    border: 1px solid #ffeb55;
+    margin-top: 3rem;
+}
+
+.cartWrap>.row{
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.cartWrap>.row:hover{
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.2);
+}
+
+.cartWrap col-3>h3{
+    font-size: 1.5rem;
+}
+
+.h4-title{
+    color: #eee;
+}
+
+.prodTotal.cartSection>p{
+    text-align: center;
+}
+
+.remove-icon{
+    text-align: center;
+}
+
+#roomSelect,
+#dateTimePicker{
+    min-width: max-content;
+    height: 2rem;
+    border-radius: 10px;
+    padding-left: 0.5rem;
+}
+
+.promoCode{
+    display: flex;
+    align-items: center;
+}
+
+.promoCode-item{
+    margin-right: 2rem;
+}
+
+.promoCode-item input,
+.promoCode-item button{
+    height: 3rem;
+}
+
+.promoCode-item input{
+    border-radius: 10px;
+    padding: .5rem;
+}
+
+.bill-area{
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-2-bill{
+    width: 100%;
+    max-width: 50%;
+}
+
+.subtotal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subtotal ul{
+    list-style: none;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 20rem;
+    height: auto;
+}
+
+.subtotal ul li span{
+    font-weight: 500;
+    color: #eee;
+}
+
+.disFlex{
+    display: flex;
+    height: 1.5rem;
+}
+
+.disFlex span{
+    margin-right: .5rem;
+}

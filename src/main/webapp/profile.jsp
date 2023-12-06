@@ -219,7 +219,11 @@
 			<div class="booking-panel">
 				<!-- reg serviceLoader -->
 
-
+				<div class="booking-panel-title">
+					<h3>
+						Booked list
+					</h3>
+				</div>
 				<%
 					String room = "";
 					for(Booking booking : Booking.getBookingsByCustomerID(user.getId())) {

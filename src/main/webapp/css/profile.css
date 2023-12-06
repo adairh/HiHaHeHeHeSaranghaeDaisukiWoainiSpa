@@ -11,7 +11,7 @@
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fdeb85;
+    background-color: #BBAB8C;
     background-clip: border-box;
     border: 0 solid rgba(0,0,0,.125);
     border-radius: .25rem;
@@ -49,4 +49,46 @@
 .booking-panel {
     background-color: #282626;
     padding: 50px;
+}
+
+.row .text-secondary{
+    color: #333 !important;
+    font-weight: 500;
+}
+
+.mb-0{
+    line-height: 2rem;
+}
+
+.btn-info {
+    border-radius: 3px !important;
+    color: #fff;
+    background-color: #CA965C;
+    border-color: #CA965C;
+}
+
+.btn-info:hover{
+    background-color: #666;
+    border-color: #666;
+}
+
+.col-4 {
+    text-align: center;
+}
+
+.rounded-circle {
+    border-radius: 50%!important;
+    border: 1px solid #333;
+    padding: 0.5rem;
+}
+
+.booking-panel-title h3{
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.col-md-4.mb-3>.card{
+    height: 100% !important;
 }
