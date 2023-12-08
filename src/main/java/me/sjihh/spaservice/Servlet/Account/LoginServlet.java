@@ -1,4 +1,4 @@
-package me.sjihh.spaservice.Servlet;
+package me.sjihh.spaservice.Servlet.Account;
 
 import me.sjihh.spaservice.Authentication.Admin;
 import me.sjihh.spaservice.Authentication.AuthenticateHandler;

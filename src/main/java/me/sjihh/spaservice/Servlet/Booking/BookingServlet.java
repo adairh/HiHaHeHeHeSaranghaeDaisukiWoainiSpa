@@ -1,4 +1,4 @@
-package me.sjihh.spaservice.Servlet;
+package me.sjihh.spaservice.Servlet.Booking;
 
 import me.sjihh.spaservice.Authentication.Customer;
 import me.sjihh.spaservice.Booking.BookingDetail;
@@ -20,7 +20,7 @@ public class BookingServlet extends HttpServlet {
 
         String name = request.getParameter("service");
         int serviceID = Integer.parseInt(name);
-        ServiceLoader s = ServiceLoader.loadServices().get(serviceID-1);
+        ServiceLoader s = ServiceLoader.getServiceById(serviceID);
 
         List<BookingDetail> bookings;
 
@@ -88,14 +88,14 @@ public class BookingServlet extends HttpServlet {
 
         String name = request.getParameter("service");
         int serviceID = Integer.parseInt(name);
-        ServiceLoader s = ServiceLoader.loadServices().get(serviceID-1);
+        ServiceLoader s = ServiceLoader.getServiceById(serviceID);
 
         List<BookingDetail> bookings = (List<BookingDetail>) request.getSession().getAttribute("services");
 
         int totalCost = 0;
 
         for (BookingDetail book : bookings) {
-            totalCost += ServiceLoader.loadServices().get(book.getService_ID()).getService_price();
+            totalCost += ServiceLoader.getServiceById(book.getService_ID()).getService_price();
         }
 
         //add booking with customer id, get the booking id, add in the booking details with each booking details

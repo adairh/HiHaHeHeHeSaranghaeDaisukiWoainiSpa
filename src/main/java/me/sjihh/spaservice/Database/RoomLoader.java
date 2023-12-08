@@ -44,6 +44,35 @@ public class RoomLoader {
         return roomLoaders;
     }
 
+    public static RoomLoader getRoomById(int id) {
+        try (Connection connection = SQLConnection.getConnection()) {
+            String query = "SELECT * FROM room WHERE room_id = ? LIMIT 1";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setInt(1, id);
+
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        return mapResultSetToRoom(resultSet);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        return null; // Return null if no staff is found
+    }
+
+    private static RoomLoader mapResultSetToRoom(ResultSet resultSet) throws SQLException {
+        int room_id = resultSet.getInt("room_id");
+        String room_type = resultSet.getString("room_type");
+        int room_price = resultSet.getInt("room_price");
+
+        return new RoomLoader(room_id, room_type, room_price);
+    }
+
     public int getRoom_id() {
         return room_id;
     }
@@ -53,6 +82,6 @@ public class RoomLoader {
     }
 
     public int getRoom_price() {
-        return room_price*1000;
+        return room_price;
     }
 }

@@ -65,6 +65,27 @@ public class StaffLoader {
         return null; // Return null if no staff is found
     }
 
+    public static StaffLoader getStaffById(int id) {
+        try (Connection connection = SQLConnection.getConnection()) {
+            String query = "SELECT * FROM staff WHERE staff_ID = ? LIMIT 1";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setInt(1, id);
+
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        return mapResultSetToStaff(resultSet);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        return null; // Return null if no staff is found
+    }
+
     private static StaffLoader mapResultSetToStaff(ResultSet resultSet) throws SQLException {
         int staff_ID = resultSet.getInt("staff_ID");
         int service_ID = resultSet.getInt("service_ID");

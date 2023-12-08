@@ -1,4 +1,4 @@
-package me.sjihh.spaservice.Servlet;
+package me.sjihh.spaservice.Servlet.Account;
 
 import me.sjihh.spaservice.Authentication.Customer;
 import me.sjihh.spaservice.Database.SQLConnection;

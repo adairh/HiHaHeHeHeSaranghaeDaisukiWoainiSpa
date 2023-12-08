@@ -174,7 +174,7 @@
                                                         total += booking.getTotal();
                                                     }
                                                 %>
-                                                <h2><%=df.format(total*1000)%></h2>
+                                                <h2><%=df.format(total)%></h2>
                                                 <span>total earnings</span>
                                             </div>
                                         </div>
@@ -363,6 +363,7 @@
         function showEditPopup(saleoffId) {
 
             // Get saleoff data from API
+            fetch("/LoadSaleOff?id=" + saleoffId)
             fetch("/LoadSaleOff?id=" + saleoffId)
                 .then(res => res.json())
                 .then(saleoff => {

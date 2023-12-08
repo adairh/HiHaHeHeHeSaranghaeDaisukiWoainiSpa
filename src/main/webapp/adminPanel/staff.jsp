@@ -174,7 +174,7 @@
                                                         total += booking.getTotal();
                                                     }
                                                 %>
-                                                <h2><%=df.format(total*1000)%></h2>
+                                                <h2><%=df.format(total)%></h2>
                                                 <span>total earnings</span>
                                             </div>
                                         </div>
@@ -186,10 +186,99 @@
                             </div>
                         </div>
 
+
+                        <!-- Popup panel -->
+                        <div id="addPanel" style="display:none;">
+                            <h3>Add New Staff</h3>
+
+                            <div class="card">
+                                <div class="card-body card-block">
+                                    <form method="POST" action="AddStaff">
+                                        <div class="row">
+                                            <input type="hidden" id="add_id" name="id">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="add_serviceID">Service:</label>
+                                            <select id="add_serviceID" name="serviceID">
+                                                <%
+                                                    for (ServiceLoader ll : ServiceLoader.loadServices()) {
+
+                                                %>
+                                                <option name="serviceID" value="<%=ll.getService_ID()%>">
+                                                    <%=ll.getService_name()%>
+                                                </option>
+                                                <%
+                                                    }
+                                                %>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <label>Name:</label>
+                                            <input type="text" id="add_staffName" name="staffName">
+                                        </div>
+
+                                        <!-- other fields -->
+                                        <div class="row">
+                                            <button class="btn" type="submit">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hidden edit popup -->
+                        <div id="editPopup" style="display:none;">
+                            <h3>Edit Staff</h3>
+                            <div class="card">
+                                <div class="card-body card-block">
+                                    <form method="POST" action="EditStaff">
+                                        <div class="row">
+                                            <input type="hidden" id="edit_id" name="id">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label for="edit_serviceID">Service:</label>
+                                                <select id="edit_serviceID" name="serviceID">
+                                                    <%
+                                                        for (ServiceLoader ll : ServiceLoader.loadServices()) {
+
+                                                    %>
+                                                    <option name="serviceID" value="<%=ll.getService_ID()%>">
+                                                        <%=ll.getService_name()%>
+                                                    </option>
+                                                    <%
+                                                        }
+                                                    %>
+                                                </select>
+                                            </div>
+                                            <div class="col-6">
+                                                <label>Name:</label>
+                                                <input type="text" id="edit_staffName" name="staffName">
+                                            </div>
+                                        </div>
+
+                                        <!-- other fields -->
+                                        <div class="row">
+                                            <button class="btn" type="submit">Save</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h2 class="title-1 m-b-25">Staff</h2>
+                            </div>
+                            <div class="col-lg-6">
+                                <button class="btn" id="addBtn">Add New Staff</button>
+                            </div>
+                        </div>
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <!-- Staff Table -->
-                                <h2 class="title-1 m-b-25">Staff</h2>
                                 <div class="table-responsive table--no-card m-b-40">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
@@ -197,6 +286,7 @@
                                             <th>Staff ID</th>
                                             <th>Service</th>
                                             <th>Staff Name</th>
+                                            <th>Modify</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -206,8 +296,13 @@
                                         %>
                                         <tr>
                                             <td><%= staff.getStaff_ID() %></td>
-                                            <td><%= ServiceLoader.loadServices().get(staff.getService_ID()-1).getService_name() %></td>
+                                            <td><%= ServiceLoader.getServiceById(staff.getService_ID()).getService_name() %></td>
                                             <td><%= staff.getStaff_name() %></td>
+                                            <td>
+                                                <button onclick="showEditPopup(<%= staff.getStaff_ID() %>)">Edit</button>
+                                                |||
+                                                <a href="${pageContext.request.contextPath}/DeleteStaff?id=<%=staff.getStaff_ID()%>">Delete</a>
+                                            </td>
                                         </tr>
                                         <%
                                             }
@@ -250,6 +345,44 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+
+
+    <script>
+        let add = document.getElementById("addBtn");
+        let panel = document.getElementById("addPanel");
+
+        add.onclick = function() {
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            }
+            else {
+                panel.style.display = "block";
+            }
+        }
+
+        let selected;
+        function showEditPopup(serviceID) {
+
+            // Get saleoff data from API
+            fetch("/LoadStaff?id=" + serviceID)
+                .then(res => res.json())
+                .then(saleoff => {
+                    selected = saleoff;
+
+                    // Populate values
+                    document.getElementById("edit_id").value = selected.id == null ? "" : selected.id;
+                    document.getElementById("edit_serviceID").value = selected.serviceID == null ? "" : selected.serviceID;
+                    document.getElementById("edit_staffName").value = selected.staffName == null ? "" : selected.staffName;
+                    // Show popup
+                    document.getElementById("editPopup").style.display = "block";
+
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+
+        }
+    </script>
 
 </body>
 

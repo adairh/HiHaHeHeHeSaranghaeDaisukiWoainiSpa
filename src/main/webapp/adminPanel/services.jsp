@@ -174,7 +174,7 @@
                                                         total += booking.getTotal();
                                                     }
                                                 %>
-                                                <h2><%=df.format(total*1000)%></h2>
+                                                <h2><%=df.format(total)%></h2>
                                                 <span>total earnings</span>
                                             </div>
                                         </div>
@@ -186,9 +186,103 @@
                             </div>
                         </div>
 
+
+                        <!-- Popup panel -->
+                        <div id="addServicePanel" style="display:none;">
+                            <h3>Add New Service</h3>
+
+                            <div class="card">
+                                <div class="card-body card-block">
+                                    <form method="POST" action="AddService">
+                                        <div class="row">
+                                            <input type="hidden" id="add_id" name="id">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label>Service Name:</label>
+                                                <input type="text" id="add_serviceName" name="serviceName">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label>Price:</label>
+                                                <input type="number" id="add_servicePrice" name="servicePrice">
+                                            </div>
+                                            <div class="col-6">
+                                                <label>Time:</label>
+                                                <input type="number" id="add_serviceTime" name="serviceTime">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col-12">
+                                                <label>Detail</label>
+                                                <input type="text" id="add_serviceDetail" name="serviceDetail">
+                                            </div>
+                                        </div>
+
+
+                                        <!-- other fields -->
+                                        <div class="row">
+                                            <button class="btn" type="submit">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                       <!-- Hidden edit popup -->
+                        <div id="editPopup" style="display:none;">
+                            <h3>Edit Service</h3>
+                            <div class="card">
+                                <div class="card-body card-block">
+                                    <form method="POST" action="EditService">
+                                        <div class="row">
+                                            <input type="hidden" id="edit_id" name="id">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label>Service Name:</label>
+                                                <input type="text" id="edit_serviceName" name="serviceName">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label>Price:</label>
+                                                <input type="number" id="edit_servicePrice" name="servicePrice">
+                                            </div>
+                                            <div class="col-6">
+                                                <label>Time:</label>
+                                                <input type="number" id="edit_serviceTime" name="serviceTime">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col-12">
+                                                <label>Detail</label>
+                                                <input type="text" id="edit_serviceDetail" name="serviceDetail">
+                                            </div>
+                                        </div>
+                                        <!-- other fields -->
+                                        <div class="row">
+                                            <button class="btn" type="submit">Save</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h2 class="title-1 m-b-25">Services</h2>
+                            </div>
+                            <div class="col-lg-6">
+                                <button class="btn" id="addServiceBtn">Add New Service</button>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <h2 class="title-1 m-b-25">Services</h2>
                                 <div class="table-responsive table--no-card m-b-40">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
@@ -199,6 +293,7 @@
                                             <th>Service Price</th>
                                             <th>Service Time</th>
                                             <th>Service Detail</th>
+                                            <th>Modify</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -213,6 +308,11 @@
                                             <td><%= service.getService_price() %></td>
                                             <td><%= service.getService_time() %></td>
                                             <td><%= service.getService_detail() %></td>
+                                            <td>
+                                                <button onclick="showEditPopup(<%= service.getService_ID() %>)">Edit</button>
+                                                |||
+                                                <a href="${pageContext.request.contextPath}/DeleteService?id=<%=service.getService_ID()%>">Delete</a>
+                                            </td>
                                         </tr>
                                         <%
                                             }
@@ -254,6 +354,44 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+    <script>
+        let addService = document.getElementById("addServiceBtn");
+        let panel = document.getElementById("addServicePanel");
+
+        addService.onclick = function() {
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            }
+            else {
+                panel.style.display = "block";
+            }
+        }
+
+        let selectedService;
+        function showEditPopup(serviceID) {
+
+            // Get saleoff data from API
+            fetch("/LoadService?id=" + serviceID)
+                .then(res => res.json())
+                .then(saleoff => {
+                    selectedService = saleoff;
+
+                    // Populate values
+                    document.getElementById("edit_id").value = selectedService.id == null ? "" : selectedService.id;
+                    document.getElementById("edit_serviceName").value = selectedService.serviceName == null ? "" : selectedService.serviceName;
+                    document.getElementById("edit_servicePrice").value = selectedService.servicePrice == null ? "" : selectedService.servicePrice;
+                    document.getElementById("edit_serviceTime").value = selectedService.serviceTime == null ? "" : selectedService.serviceTime;
+                    document.getElementById("edit_serviceDetail").value = selectedService.serviceDetail == null ? "" : selectedService.serviceDetail;
+                    // Show popup
+                    document.getElementById("editPopup").style.display = "block";
+
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+
+        }
+    </script>
 
 </body>
 

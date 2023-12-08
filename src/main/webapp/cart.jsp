@@ -72,11 +72,11 @@
                                       <p class="itemNumber">#<%=bookingDetail.getService_ID()%></p>
                                   </div>
                                   <div class="col-3">
-                                      <h3><%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()-1).getService_name()%></h3>
+                                      <h3><%=ServiceLoader.getServiceById(bookingDetail.getService_ID()).getService_name()%></h3>
                                   </div>
                                   <div class="col-3">
                                       <div class="prodTotal cartSection">
-                                          <p> <%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()-1).getService_price()%>,000 VND</p>
+                                          <p> <%=ServiceLoader.getServiceById(bookingDetail.getService_ID()).getService_price()%> VND</p>
                                       </div>
                                   </div>
                                   <div class="col-1 remove-icon">
@@ -168,7 +168,7 @@
                                   <p><span id="priceDisplay">
                                       <%=
                                       (session.getAttribute("room") != null && (Integer)session.getAttribute("room") >= 0) ?
-                                              RoomLoader.loadRooms().get((Integer) session.getAttribute("room")).getRoom_price()
+                                              RoomLoader.getRoomById((Integer) session.getAttribute("room")).getRoom_price()
                                               : 0
                                       %>
                                   </span></p>

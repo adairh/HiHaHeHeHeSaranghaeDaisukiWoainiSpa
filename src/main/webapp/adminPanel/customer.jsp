@@ -174,7 +174,7 @@
                                                         total += booking.getTotal();
                                                     }
                                                 %>
-                                                <h2><%=df.format(total*1000)%></h2>
+                                                <h2><%=df.format(total)%></h2>
                                                 <span>total earnings</span>
                                             </div>
                                         </div>
@@ -186,39 +186,144 @@
                             </div>
                         </div>
 
+
+
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h2 class="title-1 m-b-25">Customers</h2>
+                            </div>
+                            <div class="col-lg-6">
+                                <button class="btn" id="addCustomerBtn">Add New Customer</button>
+                            </div>
+                        </div>
+
+
+
+
+                        <!-- Popup panel -->
+                        <div id="addCustomerPanel" style="display:none;">
+                            <h3>Add New Customer</h3>
+
+                            <div class="card">
+                                <div class="card-body card-block">
+                                    <form method="POST" action="AddCustomer">
+                                        <div class="row">
+                                            <input type="hidden" id="add_id" name="id">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label>Username:</label>
+                                                <input type="text" id="add_username" name="username">
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="add_level_id">Level:</label>
+                                                <select id="add_level_id" name="levelID">
+                                                    <%
+                                                        for (LevelLoader ll : LevelLoader.loadLevels()) {
+
+                                                    %>
+                                                    <option name="levelID" value="<%=ll.getLevel_ID()%>">
+                                                        <%=ll.getLevel_name()%>
+                                                    </option>
+                                                    <%
+                                                        }
+                                                    %>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label>Address</label>
+                                                <input type="text" id="add_address" name="address">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label>Telephone:</label>
+                                                <input type="tel" id="add_telephone" name="telephone">
+                                            </div>
+                                            <div class="col-6">
+                                                <label>Email:</label>
+                                                <input type="email" id="add_email" name="email">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label>Password:</label>
+                                                <input type="text" id="add_password" name="password">
+                                            </div>
+                                        </div>
+
+                                        <!-- other fields -->
+                                        <div class="row">
+                                            <button class="btn" type="submit">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hidden edit popup -->
+                        <div id="editPopup" style="display:none;">
+                            <h3>Edit Customer</h3>
+                            <div class="card">
+                                <div class="card-body card-block">
+                                    <form method="POST" action="EditCustomer">
+                                        <div class="row">
+                                            <input type="hidden" id="edit_id" name="id">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label for="edit_lvl">Level:</label>
+                                                <select id="edit_lvl" name="levelID">
+                                                    <%
+                                                        for (LevelLoader ll : LevelLoader.loadLevels()) {
+
+                                                    %>
+                                                    <option name="levelID" value="<%=ll.getLevel_ID()%>">
+                                                        <%=ll.getLevel_name()%>
+                                                    </option>
+                                                    <%
+                                                        }
+                                                    %>
+                                                </select>
+                                            </div>
+                                            <div class="col-6">
+                                                <label>Username:</label>
+                                                <input type="text" id="edit_username" name="username">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-12">
+                                                <label>Address</label>
+                                                <input type="text" id="edit_address" name="address">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label>Telephone:</label>
+                                                <input type="tel" id="edit_telephone" name="telephone">
+                                            </div>
+                                            <div class="col-6">
+                                                <label>Email:</label>
+                                                <input type="email" id="edit_email" name="email">
+                                            </div>
+                                        </div>
+
+                                        <!-- other fields -->
+                                        <div class="row">
+                                            <button class="btn" type="submit">Save</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="row">
                             <div class="col-lg-12">
-                                <h2 class="title-1 m-b-25">Previews</h2>
-                                <div class="table-responsive table--no-card m-b-40">
-                                    <table class="table table-borderless table-striped table-earning">
-                                        <thead>
-                                        <tr>
-                                            <th>Preview ID</th>
-                                            <th>Admin ID</th>
-                                            <th>Customer ID</th>
-                                            <th>Service ID</th>
-                                            <th>Comment</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <%
-                                            List<PreviewLoader> previews = PreviewLoader.loadPreviews();
-                                            for (PreviewLoader preview : previews) {
-                                        %>
-                                        <tr>
-                                            <td><%= preview.getPreview_ID() %></td>
-                                            <td><%= preview.getAdmin_ID() %></td>
-                                            <td><%= preview.getCustomer_ID() %></td>
-                                            <td><%= preview.getService_ID() %></td>
-                                            <td><%= preview.getComment() %></td>
-                                        </tr>
-                                        <%
-                                            }
-                                        %>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <h2 class="title-1 m-b-25">Customers</h2>
                                 <div class="table-responsive table--no-card m-b-40">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
@@ -229,6 +334,7 @@
                                             <th>Email</th>
                                             <th>Phone</th>
                                             <th>Level ID</th>
+                                            <th>Modify</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -243,6 +349,11 @@
                                             <td><%= customer.getEmail() %></td>
                                             <td><%= customer.getPhone() %></td>
                                             <td><%= customer.getLevel_id() %></td>
+                                            <td>
+                                                <button onclick="showEditPopup(<%= customer.getId() %>)">Edit</button>
+                                                |||
+                                                <a href="${pageContext.request.contextPath}/DeleteCustomer?id=<%=customer.getId()%>">Delete</a>
+                                            </td>
                                         </tr>
                                         <%
                                             }
@@ -253,135 +364,10 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h2 class="title-1 m-b-25">Services</h2>
-                                <div class="table-responsive table--no-card m-b-40">
-                                    <table class="table table-borderless table-striped table-earning">
-                                        <thead>
-                                        <tr>
-                                            <th>Service ID</th>
-                                            <th>Admin ID</th>
-                                            <th>Service Name</th>
-                                            <th>Service Price</th>
-                                            <th>Service Time</th>
-                                            <th>Service Detail</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <%
-                                            List<ServiceLoader> services = ServiceLoader.loadServices();
-                                            for (ServiceLoader service : services) {
-                                        %>
-                                        <tr>
-                                            <td><%= service.getService_ID() %></td>
-                                            <td><%= service.getAdmin_ID() %></td>
-                                            <td><%= service.getService_name() %></td>
-                                            <td><%= service.getService_price() %></td>
-                                            <td><%= service.getService_time() %></td>
-                                            <td><%= service.getService_detail() %></td>
-                                        </tr>
-                                        <%
-                                            }
-                                        %>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h2 class="title-1 m-b-25">Rooms</h2>
-                                <div class="table-responsive table--no-card m-b-40">
-                                    <table class="table table-borderless table-striped table-earning">
-                                        <thead>
-                                        <tr>
-                                            <th>Room ID</th>
-                                            <th>Room Type</th>
-                                            <th>Room Price</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <%
-                                            List<RoomLoader> rooms = RoomLoader.loadRooms();
-                                            for (RoomLoader room : rooms) {
-                                        %>
-                                        <tr>
-                                            <td><%= room.getRoom_id() %></td>
-                                            <td><%= room.getRoom_type() %></td>
-                                            <td><%= room.getRoom_price() %></td>
-                                        </tr>
-                                        <%
-                                            }
-                                        %>
-                                        </tbody>
-                                    </table>
-                                </div>
 
-                                <!-- Staff Table -->
-                                <h2 class="title-1 m-b-25">Staff</h2>
-                                <div class="table-responsive table--no-card m-b-40">
-                                    <table class="table table-borderless table-striped table-earning">
-                                        <thead>
-                                        <tr>
-                                            <th>Staff ID</th>
-                                            <th>Service ID</th>
-                                            <th>Staff Name</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <%
-                                            List<StaffLoader> staffs = StaffLoader.loadStaffs();
-                                            for (StaffLoader staff : staffs) {
-                                        %>
-                                        <tr>
-                                            <td><%= staff.getStaff_ID() %></td>
-                                            <td><%= staff.getService_ID() %></td>
-                                            <td><%= staff.getStaff_name() %></td>
-                                        </tr>
-                                        <%
-                                            }
-                                        %>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h2 class="title-1 m-b-25">SaleOff</h2>
-                                <div class="table-responsive table--no-card m-b-40">
-                                    <table class="table table-borderless table-striped table-earning">
-                                        <thead>
-                                        <tr>
-                                            <th>SaleOff ID</th>
-                                            <th>Discount Percentage</th>
-                                            <th>Discount Code</th>
-                                            <th>Start</th>
-                                            <th>End</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <%
-                                            List<SaleOffLoader> saleOffs = SaleOffLoader.loadSaleOffs();
-                                            for (SaleOffLoader saleOff : saleOffs) {
-                                        %>
-                                        <tr>
-                                            <td><%= saleOff.getSaleOff_ID() %></td>
-                                            <td><%= saleOff.getSaleOff_percent() %></td>
-                                            <td><%= saleOff.getSaleOff_code() %></td>
-                                            <td><%= saleOff.getSaleOff_start() %></td>
-                                            <td><%= saleOff.getSaleOff_finish() %></td>
-                                        </tr>
-                                        <%
-                                            }
-                                        %>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -415,6 +401,45 @@
     <!-- Main JS-->
     <script src="js/main.js"></script>
 
+    <script>
+        let addCustomer = document.getElementById("addCustomerBtn");
+        let panel = document.getElementById("addCustomerPanel");
+
+        addCustomer.onclick = function() {
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            }
+            else {
+                panel.style.display = "block";
+            }
+        }
+
+        let selectedCustomer;
+        function showEditPopup(customerID) {
+
+            // Get saleoff data from API
+            fetch("/LoadCustomer?id=" + customerID)
+                .then(res => res.json())
+                .then(saleoff => {
+                    selectedCustomer = saleoff;
+
+                    // Populate values
+                    document.getElementById("edit_id").value = selectedCustomer.id == null ? "" : selectedCustomer.id;
+                    document.getElementById("edit_username").value = selectedCustomer.username == null ? "" : selectedCustomer.username;
+                    document.getElementById("edit_address").value = selectedCustomer.address == null ? "" : selectedCustomer.address;
+                    document.getElementById("edit_telephone").value = selectedCustomer.telephone == null ? "" : selectedCustomer.telephone;
+                    document.getElementById("edit_email").value = selectedCustomer.email == null ? "" : selectedCustomer.email;
+                    document.getElementById("edit_lvl").value = selectedCustomer.levelID == null ? "" : selectedCustomer.levelID;
+                    // Show popup
+                    document.getElementById("editPopup").style.display = "block";
+
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+
+        }
+    </script>
 </body>
 
 </html>

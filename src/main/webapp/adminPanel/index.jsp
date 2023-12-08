@@ -174,7 +174,7 @@
                                                         total += booking.getTotal();
                                                     }
                                                 %>
-                                                <h2><%=df.format(total*1000)%></h2>
+                                                <h2><%=df.format(total)%></h2>
                                                 <span>total earnings</span>
                                             </div>
                                         </div>
@@ -212,9 +212,9 @@
                                             <td><%= booking.getBooking_ID() %></td>
                                             <td><%= Customer.getUserById(booking.getCustomer_ID()).getUsername() %></td>
                                             <td><%= booking.getBooking_date() %></td>
-                                            <td><%= booking.getTotal()*1000 %></td>
-                                            <td><%= ServiceLoader.loadServices().get(bookingDetail.getService_ID()-1).getService_name() %></td>
-                                            <td><%= RoomLoader.loadRooms().get(bookingDetail.getRoom_ID()-1).getRoom_type() %></td>
+                                            <td><%= booking.getTotal() %></td>
+                                            <td><%= ServiceLoader.getServiceById(bookingDetail.getService_ID()).getService_name() %></td>
+                                            <td><%= RoomLoader.getRoomById(bookingDetail.getRoom_ID()).getRoom_type() %></td>
                                         </tr>
                                         <%
                                                 }

@@ -1,4 +1,4 @@
-package me.sjihh.spaservice.Servlet;
+package me.sjihh.spaservice.Servlet.Booking;
 
 import me.sjihh.spaservice.Booking.BookingDetail;
 import me.sjihh.spaservice.Booking.BookingHandle;
@@ -25,7 +25,7 @@ public class RemoveBooking extends HttpServlet {
 
         String name = request.getParameter("service");
         int serviceID = Integer.parseInt(name);
-        ServiceLoader s = ServiceLoader.loadServices().get(serviceID);
+        ServiceLoader s = ServiceLoader.getServiceById(serviceID);
 
         List<BookingDetail> bookings;
 

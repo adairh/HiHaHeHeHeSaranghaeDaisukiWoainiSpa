@@ -174,7 +174,7 @@
                                                         total += booking.getTotal();
                                                     }
                                                 %>
-                                                <h2><%=df.format(total*1000)%></h2>
+                                                <h2><%=df.format(total)%></h2>
                                                 <span>total earnings</span>
                                             </div>
                                         </div>
@@ -187,9 +187,73 @@
                         </div>
 
 
+                        <!-- Popup panel -->
+                        <div id="addPanel" style="display:none;">
+                            <h3>Add New Staff</h3>
+
+                            <div class="card">
+                                <div class="card-body card-block">
+                                    <form method="POST" action="AddRoom">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label>Type:</label>
+                                                <input type="text" id="add_roomType" name="roomType">
+                                            </div>
+                                            <div class="col-6">
+                                                <label>Price:</label>
+                                                <input type="number" id="add_roomPrice" name="roomPrice">
+                                            </div>
+                                        </div>
+
+                                        <!-- other fields -->
+                                        <div class="row">
+                                            <button class="btn" type="submit">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hidden edit popup -->
+                        <div id="editPopup" style="display:none;">
+                            <h3>Edit Room</h3>
+                            <div class="card">
+                                <div class="card-body card-block">
+                                    <form method="POST" action="EditRoom">
+                                        <div class="row">
+                                            <input type="hidden" id="edit_id" name="id">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label>Type:</label>
+                                                <input type="text" id="edit_roomType" name="roomType">
+                                            </div>
+                                            <div class="col-6">
+                                                <label>Price:</label>
+                                                <input type="number" id="edit_roomPrice" name="roomPrice">
+                                            </div>
+                                        </div>
+
+                                        <!-- other fields -->
+                                        <div class="row">
+                                            <button class="btn" type="submit">Save</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h2 class="title-1 m-b-25">Rooms</h2>
+                            </div>
+                            <div class="col-lg-6">
+                                <button class="btn" id="addBtn">Add New Room</button>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <h2 class="title-1 m-b-25">Rooms</h2>
                                 <div class="table-responsive table--no-card m-b-40">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
@@ -197,6 +261,7 @@
                                             <th>Room ID</th>
                                             <th>Room Type</th>
                                             <th>Room Price</th>
+                                            <th>Modify</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -208,6 +273,11 @@
                                             <td><%= room.getRoom_id() %></td>
                                             <td><%= room.getRoom_type() %></td>
                                             <td><%= room.getRoom_price() %></td>
+                                            <td>
+                                                <button onclick="showEditPopup(<%= room.getRoom_id() %>)">Edit</button>
+                                                |||
+                                                <a href="${pageContext.request.contextPath}/DeleteRoom?id=<%=room.getRoom_id()%>">Delete</a>
+                                            </td>
                                         </tr>
                                         <%
                                             }
@@ -250,6 +320,44 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+
+
+    <script>
+        let add = document.getElementById("addBtn");
+        let panel = document.getElementById("addPanel");
+
+        add.onclick = function() {
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            }
+            else {
+                panel.style.display = "block";
+            }
+        }
+
+        let selected;
+        function showEditPopup(serviceID) {
+
+            // Get saleoff data from API
+            fetch("/LoadRoom?id=" + serviceID)
+                .then(res => res.json())
+                .then(saleoff => {
+                    selected = saleoff;
+
+                    // Populate values
+                    document.getElementById("edit_id").value = selected.id == null ? "" : selected.id;
+                    document.getElementById("edit_roomPrice").value = selected.roomPrice == null ? "" : selected.roomPrice;
+                    document.getElementById("edit_roomType").value = selected.roomType == null ? "" : selected.roomType;
+                    // Show popup
+                    document.getElementById("editPopup").style.display = "block";
+
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+
+        }
+    </script>
 
 </body>
 
