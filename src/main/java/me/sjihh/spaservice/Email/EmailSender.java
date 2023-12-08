@@ -116,6 +116,7 @@ public class EmailSender {
     private static void sendEmail(String to, String subject, String body) {
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.ssl.protocols", "TLSv1.2");
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.host", "smtp.gmail.com");
         properties.put("mail.smtp.port", "587");
@@ -150,9 +151,9 @@ public class EmailSender {
             System.out.println(b.getBooking_ID());
             for (BookingDetailLoader bd : BookingDetailLoader.getBookingDetailsByBookingID(b.getBooking_ID())) {
                 System.out.println("A" + bd.getService_ID());
-                if (!lsl.contains(ServiceLoader.loadServices().get(bd.getService_ID() - 1))) {
-                    System.out.println(ServiceLoader.loadServices().get(bd.getService_ID() - 1).getService_name() + " " + lsl.size());
-                    lsl.add(ServiceLoader.loadServices().get(bd.getService_ID() - 1));
+                if (!lsl.contains(ServiceLoader.getServiceById(bd.getService_ID()))) {
+                    System.out.println(ServiceLoader.getServiceById(bd.getService_ID()).getService_name() + " " + lsl.size());
+                    lsl.add(ServiceLoader.getServiceById(bd.getService_ID()));
                 }
             }
         }
@@ -160,6 +161,6 @@ public class EmailSender {
     }
 
     public static void main(String[] args) {
-        getAllServicesBookedByUser(1);
+        sendForgetPasswordEmail("huyyhoangg150203@gmail.com", "huyyhoangg150203");
     }
 }

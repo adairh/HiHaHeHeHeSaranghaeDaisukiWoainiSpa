@@ -48,7 +48,7 @@
           <div class="item <%=staffLoader.getStaff_ID()==1?"active" : ""%>" style="background-image: url(images/person_<%=i+1%>.jpg);">
             <div class="item-desc">
               <h3 class="mb-3"><a href="#"><%=staffLoader.getStaff_name()%></a></h3>
-              <p class="mb-4">Experience staff of our Spa, and the major is doing <%=ServiceLoader.loadServices().get(staffLoader.getService_ID()-1).getService_name()%>!</p>
+              <p class="mb-4">Experience staff of our Spa, and the major is doing <%=ServiceLoader.getServiceById(staffLoader.getService_ID()).getService_name()%>!</p>
             </div>
           </div>
           <%

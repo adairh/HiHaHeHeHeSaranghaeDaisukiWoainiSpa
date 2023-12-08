@@ -174,7 +174,7 @@
                                                         total += booking.getTotal();
                                                     }
                                                 %>
-                                                <h2><%=df.format(total*1000)%></h2>
+                                                <h2><%=df.format(total)%></h2>
                                                 <span>total earnings</span>
                                             </div>
                                         </div>
@@ -186,18 +186,144 @@
                             </div>
                         </div>
 
+
+
+                        <!-- Popup panel -->
+                        <div id="addPanel" style="display:none;">
+                            <h3>Add New Review</h3>
+
+                            <div class="card">
+                                <div class="card-body card-block">
+                                    <form method="POST" action=AddPreview>
+                                        <div class="row">
+                                            <input type="hidden" id="add_id" name="id">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label for="add_customerID">Customer:</label>
+                                                <select id="add_customerID" name="customerID">
+                                                    <%
+                                                        for (Customer ll : Customer.getAllCustomers()) {
+
+                                                    %>
+                                                    <option name="customerID" value="<%=ll.getId()%>">
+                                                        <%=ll.getUsername()%>
+                                                    </option>
+                                                    <%
+                                                        }
+                                                    %>
+                                                </select>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="add_serviceID">Service:</label>
+                                                <select id="add_serviceID" name="serviceID">
+                                                    <%
+                                                        for (ServiceLoader ll : ServiceLoader.loadServices()) {
+
+                                                    %>
+                                                    <option name="serviceID" value="<%=ll.getService_ID()%>">
+                                                        <%=ll.getService_name()%>
+                                                    </option>
+                                                    <%
+                                                        }
+                                                    %>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label>Comment:</label>
+                                                <input type="text" id="add_comment" name="comment">
+                                            </div>
+                                        </div>
+
+
+                                        <!-- other fields -->
+                                        <div class="row">
+                                            <button class="btn" type="submit">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Hidden edit popup -->
+                        <div id="editPopup" style="display:none;">
+                            <h3>Edit Review</h3>
+                            <div class="card">
+                                <div class="card-body card-block">
+                                    <form method="POST" action="EditPreview">
+                                        <div class="row">
+                                            <input type="hidden" id="edit_id" name="id">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label for="edit_customerID">Customer:</label>
+                                                <select id="edit_customerID" name="customerID">
+                                                    <%
+                                                        for (Customer ll : Customer.getAllCustomers()) {
+
+                                                    %>
+                                                    <option name="customerID" value="<%=ll.getId()%>">
+                                                        <%=ll.getUsername()%>
+                                                    </option>
+                                                    <%
+                                                        }
+                                                    %>
+                                                </select>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="edit_serviceID">Service:</label>
+                                                <select id="edit_serviceID" name="serviceID">
+                                                    <%
+                                                        for (ServiceLoader ll : ServiceLoader.loadServices()) {
+
+                                                    %>
+                                                    <option name="serviceID" value="<%=ll.getService_ID()%>">
+                                                        <%=ll.getService_name()%>
+                                                    </option>
+                                                    <%
+                                                        }
+                                                    %>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label>Comment:</label>
+                                                <input type="text" id="edit_comment" name="comment">
+                                            </div>
+                                        </div>
+
+                                        <!-- other fields -->
+                                        <div class="row">
+                                            <button class="btn" type="submit">Save</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h2 class="title-1 m-b-25">Reviews</h2>
+                            </div>
+                            <div class="col-lg-6">
+                                <button class="btn" id="addBtn">Add New Review</button>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <h2 class="title-1 m-b-25">Previews</h2>
                                 <div class="table-responsive table--no-card m-b-40">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                         <tr>
-                                            <th>Preview ID</th>
+                                            <th>Review ID</th>
                                             <th>Admin ID</th>
                                             <th>Customer</th>
                                             <th>Service</th>
                                             <th>Comment</th>
+                                            <th>Modify</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -209,40 +335,13 @@
                                             <td><%= preview.getPreview_ID() %></td>
                                             <td><%= preview.getAdmin_ID() %></td>
                                             <td><%= Customer.getUserById(preview.getCustomer_ID()).getUsername() %></td>
-                                            <td><%= ServiceLoader.loadServices().get(preview.getService_ID()-1).getService_name() %></td>
+                                            <td><%= ServiceLoader.getServiceById(preview.getService_ID()).getService_name() %></td>
                                             <td><%= preview.getComment() %></td>
-                                        </tr>
-                                        <%
-                                            }
-                                        %>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <h2 class="title-1 m-b-25">Customers</h2>
-                                <div class="table-responsive table--no-card m-b-40">
-                                    <table class="table table-borderless table-striped table-earning">
-                                        <thead>
-                                        <tr>
-                                            <th>Customer ID</th>
-                                            <th>Username</th>
-                                            <th>Address</th>
-                                            <th>Email</th>
-                                            <th>Phone</th>
-                                            <th>Level ID</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <%
-                                            List<Customer> customers = Customer.getAllCustomers();
-                                            for (Customer customer : customers) {
-                                        %>
-                                        <tr>
-                                            <td><%= customer.getId() %></td>
-                                            <td><%= customer.getUsername() %></td>
-                                            <td><%= customer.getAddress() %></td>
-                                            <td><%= customer.getEmail() %></td>
-                                            <td><%= customer.getPhone() %></td>
-                                            <td><%= customer.getLevel_id() %></td>
+                                            <td>
+                                                <button onclick="showEditPopup(<%= preview.getPreview_ID() %>)">Edit</button>
+                                                |||
+                                                <a href="${pageContext.request.contextPath}/DeletePreview?id=<%=preview.getPreview_ID()%>">Delete</a>
+                                            </td>
                                         </tr>
                                         <%
                                             }
@@ -285,6 +384,44 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+
+
+    <script>
+        let add = document.getElementById("addBtn");
+        let panel = document.getElementById("addPanel");
+
+        add.onclick = function() {
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            }
+            else {
+                panel.style.display = "block";
+            }
+        }
+
+        let selected;
+        function showEditPopup(serviceID) {
+
+            // Get saleoff data from API
+            fetch("/LoadReview?id=" + serviceID)
+                .then(res => res.json())
+                .then(saleoff => {
+                    selected = saleoff;
+                    // Populate values
+                    document.getElementById("edit_id").value = selected.id == null ? "" : selected.id;
+                    document.getElementById("edit_customerID").value = selected.customerID == null ? "" : selected.customerID;
+                    document.getElementById("edit_serviceID").value = selected.serviceID == null ? "" : selected.serviceID;
+                    document.getElementById("edit_comment").value = selected.comment == null ? "" : selected.comment;
+                    // Show popup
+                    document.getElementById("editPopup").style.display = "block";
+
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+
+        }
+    </script>
 
 </body>
 

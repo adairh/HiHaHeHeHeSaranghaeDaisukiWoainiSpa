@@ -1,4 +1,4 @@
-package me.sjihh.spaservice.Servlet;
+package me.sjihh.spaservice.Servlet.Account;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

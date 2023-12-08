@@ -32,7 +32,7 @@ public class ServiceLoader {
         List<ServiceLoader> serviceLoaders = new ArrayList<>();
         for (Booking booking : Booking.getBookingsByCustomerID(userID)) {
             for (BookingDetailLoader bookingDetailLoader : BookingDetailLoader.getBookingDetailsByBookingID(booking.getBooking_ID())) {
-                serviceLoaders.add(ServiceLoader.loadServices().get(bookingDetailLoader.getService_ID()-1));
+                serviceLoaders.add(ServiceLoader.getServiceById(bookingDetailLoader.getService_ID()));
             }
         }
         return serviceLoaders;
@@ -78,6 +78,40 @@ public class ServiceLoader {
 
         return serviceLoaders;
     }
+    public static ServiceLoader getServiceById(int id) {
+        try (Connection connection = SQLConnection.getConnection()) {
+            String query = "SELECT * FROM service WHERE service_ID = ? LIMIT 1";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setInt(1, id);
+
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        return mapResultSetToService(resultSet);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        return null; // Return null if no staff is found
+    }
+
+    private static ServiceLoader mapResultSetToService(ResultSet resultSet) throws SQLException {
+        int service_ID = resultSet.getInt("service_ID");
+        int admin_ID = resultSet.getInt("admin_ID");
+        String service_name = resultSet.getString("service_name");
+        int service_price = resultSet.getInt("service_price");
+        int service_time = resultSet.getInt("service_time");
+        String service_detail = resultSet.getString("service_detail");
+
+
+
+        return new ServiceLoader(service_ID, admin_ID, service_name, service_price, service_time, service_detail);
+    }
+
 
     public int getService_ID() {
         return service_ID;

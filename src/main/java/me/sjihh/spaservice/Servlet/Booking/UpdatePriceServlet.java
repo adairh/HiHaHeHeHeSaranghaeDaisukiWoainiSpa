@@ -1,4 +1,4 @@
-package me.sjihh.spaservice.Servlet;
+package me.sjihh.spaservice.Servlet.Booking;
 
 import me.sjihh.spaservice.Authentication.Customer;
 import me.sjihh.spaservice.Database.LevelLoader;
@@ -77,7 +77,7 @@ public class UpdatePriceServlet extends HttpServlet {
             Customer user = ((Customer) request.getSession().getAttribute("user"));
             int lvl = LevelLoader.getLevelByID(user.getLevel_id()).getSale_percent();
             if (roomID > 0)
-                total += RoomLoader.loadRooms().get(roomID).getRoom_price();
+                total += RoomLoader.getRoomById(roomID).getRoom_price();
             total += servicePrice;
 
             int sale = lvl + getDiscountByPromoCode(promo);

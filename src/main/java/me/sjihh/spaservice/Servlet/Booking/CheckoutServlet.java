@@ -1,4 +1,4 @@
-package me.sjihh.spaservice.Servlet;
+package me.sjihh.spaservice.Servlet.Booking;
 
 import java.io.IOException;
 import java.sql.*;
@@ -104,7 +104,7 @@ public class CheckoutServlet extends HttpServlet {
                     preparedStatement.setTimestamp(5, Timestamp.valueOf(dt));
                     preparedStatement.setInt(6, StaffLoader.getStaffByServiceId(bookingDetail.getService_ID()).getStaff_ID());
                     preparedStatement.setInt(7, bookingDetail.getSaleOff_ID());
-                    dt = dt.plus(ServiceLoader.loadServices().get(bookingDetail.getService_ID()-1).getService_time(), ChronoUnit.MINUTES);
+                    dt = dt.plus(ServiceLoader.getServiceById(bookingDetail.getService_ID()).getService_time(), ChronoUnit.MINUTES);
                     preparedStatement.setTimestamp(8, Timestamp.valueOf(dt));
 
                     preparedStatement.addBatch(); // Add the batch for execution

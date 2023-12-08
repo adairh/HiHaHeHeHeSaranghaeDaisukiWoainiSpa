@@ -117,9 +117,9 @@ public class Customer extends User{
             System.out.println(b.getBooking_ID());
             for (BookingDetailLoader bd : BookingDetailLoader.getBookingDetailsByBookingID(b.getBooking_ID())) {
                 System.out.println("A" + bd.getService_ID());
-                if (!lsl.contains(ServiceLoader.loadServices().get(bd.getService_ID() - 1))) {
-                    System.out.println(ServiceLoader.loadServices().get(bd.getService_ID() - 1).getService_name() + " " + lsl.size());
-                    lsl.add(ServiceLoader.loadServices().get(bd.getService_ID() - 1));
+                if (!lsl.contains(ServiceLoader.getServiceById(bd.getService_ID()))) {
+                    System.out.println(ServiceLoader.getServiceById(bd.getService_ID()).getService_name() + " " + lsl.size());
+                    lsl.add(ServiceLoader.getServiceById(bd.getService_ID()));
                 }
             }
         }

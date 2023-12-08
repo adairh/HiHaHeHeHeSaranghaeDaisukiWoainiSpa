@@ -7,6 +7,7 @@
 <%@ page import="me.sjihh.spaservice.Database.RoomLoader" %>
 <%@ page import="java.time.LocalDateTime" %>
 <%@ page import="me.sjihh.spaservice.Database.PreviewLoader" %>
+<%@ page import="java.util.Objects" %>
 <jsp:include page="/include/header/highHeader.jsp"/>
 <link rel="stylesheet" href="css/profile.css">
 <title>LuxurySpa a Spa Template</title>
@@ -297,9 +298,9 @@
 							for (BookingDetailLoader bookingDetail : BookingDetailLoader.getBookingDetailsByBookingID(booking.getBooking_ID())) {
 						%>
 						<tr>
-							<%=ServiceLoader.loadServices().get(bookingDetail.getService_ID()-1).getService_name()%>
+							<%=Objects.requireNonNull(ServiceLoader.getServiceById(bookingDetail.getService_ID())).getService_name()%>
 							<br>
-							<% room = RoomLoader.loadRooms().get(bookingDetail.getRoom_ID()).getRoom_type(); %>
+							<% room = Objects.requireNonNull(RoomLoader.getRoomById(bookingDetail.getRoom_ID())).getRoom_type(); %>
 						</tr>
 						<%
 							}
